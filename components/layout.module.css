@@ -121,7 +121,7 @@
   margin: 0 0 0.75em 0;
 }
 .h1 {
-  font-size: 32px;
+  font-size: 64px;
 }
 
 .p {
@@ -228,6 +228,7 @@
 .blogList a {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   margin: 2rem 0;
   line-height: 1.35;
 }
@@ -260,4 +261,21 @@
   max-width: 70rem;
   margin: auto;
   padding: 2rem;
+}
+.bigNumber {
+  font-size: 2em;
+  margin-right: 0.25em;
+}
+.aboutPage ul {
+  padding: 0;
+}
+.aboutPage li {
+  width: 100%;
+  list-style: none;
+}
+.aboutPage ul li a {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  line-height: 1.35;
 }

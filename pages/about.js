@@ -4,10 +4,30 @@ import styles from '../components/layout.module.css';
 export default function About() {
   return (
     <Layout>
-      <div>
+      <div className={styles.aboutPage}>
         <div className={styles.flexColumns}>
           <div className={styles.flexColumn}>
             <img src='/images/profileRight.png' alt='' />
+            <ul>
+              <li>
+                <a href='https://www.twitter.com/andysmith_is'>
+                  <span>Twitter</span>
+                  <span>@andysmith_is</span>
+                </a>
+              </li>
+              <li>
+                <a href='https://github.com/and-why'>
+                  <span>Github</span>
+                  <span>@and-why</span>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.linkedin.com/in/andysmith25/'>
+                  <span>LinkedIn</span>
+                  <span>andysmith25</span>
+                </a>
+              </li>
+            </ul>
           </div>
           <div className={styles.flexColumn}>
             <h1 className={styles.h1}>About</h1>
@@ -37,7 +57,8 @@ export default function About() {
               design, and learnt JavaScript, which lead me to understanding more about web apps,
               which as you can imagine lead me to become fascinated by ReactJS. I learnt React and
               built my own to do app, as everyone does, which is hosted on Netlify and uses Google's
-              Firebase database. This app is functional and you can find and use it here: TodoAF.
+              Firebase database. This app is functional and you can find and use it here:{' '}
+              <a href='https://www.todoaf.com'> TodoAF</a>.
             </p>
 
             <p className={styles.p}>
@@ -64,16 +85,18 @@ export default function About() {
             </p>
 
             <p className={styles.p}>
-              I have a good history in web development, so I think I've continue learning that side
-              of things, for example this website is a foray into Svelte and SvelteKit, but I really
-              want more programming, therefore I have chosen to learn Python. I have created a
-              GitHub repository to show all the Python Projects I'm building to learn the language.
-              You can see it here: https://github.com/and-why/PythonProjects.
+              I have a good history in web development, so I'm going to continue learning that side
+              of things, for example this website is refreshing my memory on React and NextJS, but I
+              really want more 'real' programming, so I have chosen to learn Python. I have created
+              a GitHub repository to show all the Python Projects I'm building to learn the
+              language, which you can see it here if you want:{' '}
+              <a href='https://github.com/and-why/PythonProjects'>Python Projects</a>.
             </p>
 
             <p className={styles.p}>
-              I also plan on getting refreshed on JavaScript, React, Svelte and GraphQL (and all the
-              other bits and pieces that touch each.)
+              After building this blog, also hosted on Github and deployed through Vercel, I realise
+              I need to do a bit of refresher on JavaScript, React, NextJS, Svelte, GraphQL (and all
+              the other bits and pieces that touch each.)
             </p>
           </div>
         </div>

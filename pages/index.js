@@ -22,7 +22,9 @@ export default function Home({ allPostsData }) {
             <li key={index}>
               <Link href={`/posts/${id}`}>
                 <a>
-                  <span>{title}</span>
+                  <span>
+                    <span className={styles.bigNumber}>{index + 1}.</span> {title}
+                  </span>
                   <span>{date}</span>
                 </a>
               </Link>

@@ -5,14 +5,20 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <h1 className={styles.h1}>
-        <a href='/'>AndySmith.is</a>
+        <Link href={'/'}>
+          <a>AndySmith.is</a>
+        </Link>
       </h1>
       <ul>
         <li>
-          <a href='/'>home</a>
+          <Link href={'/'}>
+            <a>home</a>
+          </Link>
         </li>
         <li>
-          <a href='/about'>about</a>
+          <Link href={'/about'}>
+            <a>about</a>
+          </Link>
         </li>
       </ul>
     </nav>

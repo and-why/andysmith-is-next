@@ -16,6 +16,7 @@ export default function Layout({ children, home }) {
           href='https://fonts.googleapis.com/css2?family=Chivo:wght@900&family=Merriweather&display=swap'
           rel='stylesheet'
         />
+        <script src='https://kit.fontawesome.com/54fd6b2cb2.js' crossorigin='anonymous'></script>
       </Head>
       <header className={styles.header}>
         <Nav />
@@ -36,7 +37,9 @@ export default function Layout({ children, home }) {
                   learnt.
                 </p>
                 <p className={styles.p}>
-                  <a href='/about'>Read More</a>
+                  <Link href={`/about`}>
+                    <a>Read More</a>
+                  </Link>
                 </p>
                 <main className={styles.main}>{children}</main>
               </div>
