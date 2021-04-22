@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../../Svelte/andysmith-blog-svelte-kit"
+	}
+],
+  "settings": {}
+}

@@ -148,7 +148,7 @@
 }
 @media (max-width: 750px) {
   .container h1 {
-    font-size: 48px;
+    font-size: 32px;
   }
 }
 .p {
@@ -229,7 +229,7 @@
     min-width: 100%;
   }
 }
-.title {
+.container h1.title {
   font-size: calc(100vw / 8);
   margin-bottom: 0;
   text-align: center;
