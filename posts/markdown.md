@@ -4,10 +4,6 @@ date: '2020-01-02'
 imageSrc: '/images/headerImage.png'
 ---
 
-# An h1 header
-
-==============
-
 Paragraphs are separated by a blank line.
 2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists look like:
 
