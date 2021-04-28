@@ -15,7 +15,7 @@ export default function Form() {
     };
     const res = await fetch(url, {
       method: 'POST',
-      headers: { Authorization: 'Bearer djfhsiufhds7h7i3hfiqoaw9aezjff3jf' },
+      headers: [{ key: 'Authorization', value: 'Bearer djfhsiufhds7h7i3hfiqoaw9aezjff3jf' }],
       body: JSON.stringify(body),
     });
     const result = await res.json;
