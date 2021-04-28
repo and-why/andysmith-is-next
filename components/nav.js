@@ -20,6 +20,11 @@ export default function Nav() {
             <a>about</a>
           </Link>
         </li>
+        <li>
+          <Link href={'/running-a-flight-club'}>
+            <a>flight club</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
