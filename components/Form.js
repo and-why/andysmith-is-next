@@ -7,6 +7,7 @@ export default function Form() {
     let url = 'https://api.sheety.co/518dfb4222e8b9c20571d23cefbed8c9/flights/users';
     var headers = new Headers();
     headers.append('Authorization', 'Bearer djfhsiufhds7h7i3hfiqoaw9aezjff3jf');
+    headers.append('Content-Type', 'application/json');
 
     let body = {
       user: {
@@ -15,7 +16,7 @@ export default function Form() {
         airport: event.target.airport.value,
       },
     };
-    await fetch(url, {
+    const res = await fetch(url, {
       headers: headers,
       body: JSON.stringify(body),
       method: 'POST',
