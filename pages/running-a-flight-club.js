@@ -9,26 +9,6 @@ export default function RunningAFlightClub() {
         <div className={styles.flexColumns}>
           <div className={styles.flexColumn}>
             <img src='/images/flight.jpg' alt='Flight Club' />
-            <ul>
-              <li>
-                <a href='https://www.twitter.com/andysmith_is'>
-                  <span>Twitter</span>
-                  <span>@andysmith_is</span>
-                </a>
-              </li>
-              <li>
-                <a href='https://github.com/and-why'>
-                  <span>Github</span>
-                  <span>@and-why</span>
-                </a>
-              </li>
-              <li>
-                <a href='https://www.linkedin.com/in/andysmith25/'>
-                  <span>LinkedIn</span>
-                  <span>andysmith25</span>
-                </a>
-              </li>
-            </ul>
           </div>
           <div className={styles.flexColumn}>
             <h1 className={styles.h1}>Andy Smith's Flight Club</h1>
