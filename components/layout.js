@@ -41,14 +41,15 @@ export default function Layout({ children, home }) {
               <div className={styles.flexColumn}>
                 <h1 className={styles.h1}>Learning in the open</h1>
                 <p className={styles.p}>
-                  In April 2021 I'm taking a gamble on my career. Throwing in the towel for
-                  Marketing and pushing hard towards a career in development. To do this, I'm going
-                  to 'learn in the open'.
+                  In April 2021 I took a gamble on my career. Throwing in the towel for Marketing
+                  and pushing hard towards a career in software development. To do this, I'm going
+                  to attempt to 'learn in the open'.
                 </p>
                 <p className={styles.p}>
-                  Learning in the open will make me accountable, potentially help build a network,
+                  Learning in the open will make me accountable, even if only to myself as I doubt
+                  anyone will read this website, but if people do, it might help build a network,
                   document my progress, and also show future employment opportunities what I have
-                  learnt.
+                  learnt, how I learned it and what my process was.
                 </p>
                 <p className={styles.p}>
                   <Link href={`/about`}>

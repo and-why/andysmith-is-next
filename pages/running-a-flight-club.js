@@ -22,6 +22,12 @@ export default function RunningAFlightClub() {
               flight deals out there. This is a work in progress, so it might not be the best to
               begin with.
             </p>
+            <p className={styles.p}>
+              The source code for this project, at least the Python aspect of it, is found here on{' '}
+              <Link href='https://github.com/and-why/PythonProjects/tree/master/flight-deal-tracker'>
+                <a>GitHub</a>
+              </Link>
+            </p>
             <Form />
           </div>
         </div>
