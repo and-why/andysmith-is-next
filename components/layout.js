@@ -23,7 +23,8 @@ export default function Layout({ children, home }) {
           `,
           }}
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon.png' />
+        <title>AndySmith.is | Personal Blog</title>
         <meta name='description' content="Andy Smith's Next.js Blog" />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link

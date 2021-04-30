@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
 import styles from '../components/layout.module.css';
 import Form from '../components/Form';
+import Link from 'next/link';
 
 export default function RunningAFlightClub() {
   return (

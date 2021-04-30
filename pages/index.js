@@ -20,14 +20,14 @@ export default function Home({ allPostsData }) {
         <ul>
           {allPostsData.map(({ id, date, title, imageSrc }, index) => (
             <li key={index}>
-              <Link href={`/posts/${id}`}>
-                <a>
-                  <span>
-                    <span className={styles.bigNumber}>{index + 1}.</span> {title}
-                  </span>
-                  <span>{date}</span>
-                </a>
-              </Link>
+              <h3>
+                <Link href={`/posts/${id}`}>
+                  <a>
+                    <span>{title}</span>
+                    <span>{date}</span>
+                  </a>
+                </Link>
+              </h3>
             </li>
           ))}
         </ul>
