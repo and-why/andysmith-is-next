@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +13,87 @@ a {
 
 * {
   box-sizing: border-box;
+}
+pre {
+  position: relative;
+  overflow-x: auto;
+  width: 90%;
+  margin: auto;
+  background: black;
+  padding: 2rem 1rem;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0px 20px 0px 0 rgb(223, 223, 223);
+}
+
+@media (max-width: 1000px) {
+  pre {
+    max-width: 900px;
+  }
+}
+@media (max-width: 900px) {
+  pre {
+    max-width: 800px;
+  }
+}
+@media (max-width: 800px) {
+  pre {
+    max-width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  pre {
+    max-width: 600px;
+  }
+}
+@media (max-width: 600px) {
+  pre {
+    max-width: 500px;
+  }
+}
+@media (max-width: 500px) {
+  pre {
+    max-width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  pre {
+    max-width: 300px;
+  }
+}
+pre::before {
+  content: ' ';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: #ff3b3b;
+  top: 5px;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+pre::after {
+  content: ' ';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: orange;
+  top: 5px;
+  left: 25px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+code {
+  position: relative;
+  width: 100%;
+}
+code:before {
+  content: ' ';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  top: -1.7rem;
+  left: 25px;
+  border-radius: 50%;
+  z-index: 9999;
 }

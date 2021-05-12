@@ -12,7 +12,7 @@ However, they can update every time a page is requested with the option to only 
 
 The [NextJS docs](https://nextjs.org/docs/basic-features/data-fetching) state:
 
-###You should use getStaticProps if:
+### You should use getStaticProps if:
 - The data required to render the page is available at build time ahead of a user’s request.
 - The data comes from a headless CMS.
 - The data can be publicly cached (not user-specific).
