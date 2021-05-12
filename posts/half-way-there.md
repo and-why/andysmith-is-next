@@ -1,6 +1,6 @@
 ---
 title: Half way mark
-date: '2020-05-7'
+date: '07-05-2021'
 imageSrc: '/images/code-days.png'
 ---
 
