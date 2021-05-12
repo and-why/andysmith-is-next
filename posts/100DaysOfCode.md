@@ -1,6 +1,6 @@
 ---
 title: 100 Days of Code
-date: '22-04-2021'
+date: '2021-04-22'
 imageSrc: '/images/code100Image.png'
 ---
 

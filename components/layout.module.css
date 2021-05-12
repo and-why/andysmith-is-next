@@ -264,7 +264,7 @@
 }
 .blogList a {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: baseline;
   margin: 2rem 0;
@@ -275,6 +275,9 @@
   font-size: 8rem;
   align-self: center;
   margin-bottom: 1rem;
+}
+.post_date {
+  min-width: 120px;
 }
 @media (max-width: 1400px) {
   .post h1.postTitle {

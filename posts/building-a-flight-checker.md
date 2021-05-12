@@ -1,6 +1,6 @@
 ---
 title: Flight Deal Tracker
-date: '28-04-2021'
+date: '2021-04-28'
 imageSrc: '/images/jacks-deals.png'
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: NextJS rendering and data fetching
-date: '12-05-2021'
+date: '2021-05-12'
 imageSrc: '/images/jacks-deals.png'
 ---
 

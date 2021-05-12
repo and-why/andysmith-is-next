@@ -18,13 +18,15 @@ export default function Home({ allPostsData }) {
       <div className={styles.blogList}>
         <h2>Posts</h2>
         <ul>
-          {allPostsData.map(({ id, date, title, imageSrc }, index) => (
+          {allPostsData.map(({ id, title, date }, index) => (
             <li key={index}>
               <h3>
                 <Link href={`/posts/${id}`}>
                   <a>
                     <span>{title}</span>
-                    <span>{date}</span>
+                    <span className={styles.post_date}>
+                      {new Date(date).toLocaleDateString().replace('/', '-').replace('/', '-')}
+                    </span>
                   </a>
                 </Link>
               </h3>
