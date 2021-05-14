@@ -38,8 +38,8 @@ export default function Layout({ children, home }) {
         <header className={styles.header}>
           <Nav />
           {home ? (
-            <div>
-              <h1 className={styles.h1}>Learning in the open</h1>
+            <div className={styles.main}>
+              <h1 className={styles.h1}>Homepage</h1>
               <p className={styles.p}>
                 In April 2021, I took a gamble on my career. Throwing in the towel for the 10+ year
                 career in the marketing field. I've always loved and enjoyed spending time, even
