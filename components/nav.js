@@ -1,14 +1,9 @@
 import Link from 'next/link';
-import styles from './layout.module.css';
+import styles from './nav.module.css';
 
 export default function Nav() {
   return (
     <nav className={styles.nav}>
-      <h1 className={styles.h1}>
-        <Link href={'/'}>
-          <a>AndySmith.is</a>
-        </Link>
-      </h1>
       <ul>
         <li>
           <Link href={'/'}>
@@ -18,6 +13,11 @@ export default function Nav() {
         <li>
           <Link href={'/about'}>
             <a>about</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={'mailto:hello@andysmith.is'}>
+            <a>hello@andysmith.is</a>
           </Link>
         </li>
       </ul>

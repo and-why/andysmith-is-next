@@ -2,9 +2,9 @@
 title: Half way mark
 date: '2021-05-07'
 imageSrc: '/images/code-days.png'
+height: '112'
+width: '69'
 ---
-
-
 I've hit the 50 days of code. As I mentioned in the previous post, it hasn't been every day for 50 days, as I've had most weekends to myself. I'm maintaining around 6+ hours per day during the week, so making a lot of progress. I also haven't committed to Github (the image) every day, even those days I did code I didn't always commit, as there was nothing to commit. 
 
 Over the last few days I had been finding myself wanting to build the frontend (website/client facing part) to a lot of the Python projects I've been building. Whether that is because I am more comfortable in the frontend or because it feels more complete, or I like the mix of design/build I'm not sure. But I seem to always gravitate to this kind of dev work. I don't want to focus solely on websites, and certainly not on simple WordPress or static websites. I know that much from my freelance life, but I am thinking I'd enjoy building progressive web apps and websites built in that manner would be a lot of fun.

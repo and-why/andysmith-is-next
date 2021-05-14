@@ -1,19 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from './nav';
+import Footer from '../components/footer';
 import styles from './layout.module.css';
 
 const name = 'AndySmith.is';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-47127307-1`} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+    <div>
+      <div className='container'>
+        <Head>
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-47127307-1`} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -21,53 +23,49 @@ export default function Layout({ children, home }) {
               page_path: window.location.pathname,
             });
           `,
-          }}
-        />
-        <link rel='icon' href='/favicon.png' />
-        <title>AndySmith.is | Personal Blog</title>
-        <meta name='description' content="Andy Smith's Next.js Blog" />
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Chivo:wght@900&family=Merriweather&display=swap'
-          rel='stylesheet'
-        />
-        <script src='https://kit.fontawesome.com/54fd6b2cb2.js' crossorigin='anonymous'></script>
-      </Head>
-      <header className={styles.header}>
-        <Nav />
-        {home ? (
-          <div>
-            <h1 className={styles.title}>WELCOME</h1>
-            <div className={styles.flexColumns}>
-              <div className={styles.flexColumn}>
-                <h1 className={styles.h1}>Learning in the open</h1>
-                <p className={styles.p}>
-                  In April 2021 I took a gamble on my career. Throwing in the towel for Marketing
-                  and pushing hard towards a career in software development. To do this, I'm going
-                  to attempt to 'learn in the open'.
-                </p>
-                <p className={styles.p}>
-                  Learning in the open will make me accountable, even if only to myself as I doubt
-                  anyone will read this website, but if people do, it might help build a network,
-                  document my progress, and also show future employment opportunities what I have
-                  learnt, how I learned it and what my process was.
-                </p>
-                <p className={styles.p}>
-                  <Link href={`/about`}>
-                    <a>Read More</a>
-                  </Link>
-                </p>
-                <main className={styles.main}>{children}</main>
-              </div>
-              <div className={styles.flexColumn}>
-                <img src='/images/headerImage.png' alt={name} className={styles.headerImage} />
-              </div>
+            }}
+          />
+          <link rel='icon' href='/favicon.png' />
+          <title>AndySmith.is | Personal Blog</title>
+          <meta name='description' content="Andy Smith's Next.js Blog" />
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+            rel='stylesheet'
+          />
+          <script src='https://kit.fontawesome.com/54fd6b2cb2.js' crossorigin='anonymous'></script>
+        </Head>
+        <header className={styles.header}>
+          <Nav />
+          {home ? (
+            <div>
+              <h1 className={styles.h1}>Learning in the open</h1>
+              <p className={styles.p}>
+                In April 2021, I took a gamble on my career. Throwing in the towel for the 10+ year
+                career in the marketing field. I've always loved and enjoyed spending time, even
+                whilst in marketing, writing code whereever I could within my roles; coding email
+                templates, landing pages, automation or internal tools. I've also built a few side
+                projects.
+              </p>
+              <p className={styles.p}>
+                Therefore, you guessed it, I'm going to push hard towards a career in
+                web/application development. I'm using this site as both a place to write what I
+                learn and document the journey, as well as a playground for building things.
+              </p>
+
+              <p className={styles.p}>
+                <Link href={`/about`}>
+                  <a>Read More About Me</a>
+                </Link>
+              </p>
+              <main className={styles.main}>{children}</main>
             </div>
-          </div>
-        ) : (
-          <main className={styles.main}>{children}</main>
-        )}
-      </header>
+          ) : (
+            <main className={styles.main}>{children}</main>
+          )}
+        </header>
+      </div>
+      <Footer />
     </div>
   );
 }

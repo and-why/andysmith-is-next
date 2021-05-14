@@ -1,7 +1,7 @@
 ---
 title: NextJS rendering and data fetching
 date: '2021-05-12'
-imageSrc: '/images/jacks-deals.png'
+
 ---
 
 ## Static props rendering
@@ -20,7 +20,7 @@ The [NextJS docs](https://nextjs.org/docs/basic-features/data-fetching) state:
 
 
 
-```javascript
+```jsx
 export default function HomePage(props) {
   const { products } = props;
 
@@ -68,8 +68,6 @@ export async function getStaticProps(context) {
 If a page has dynamic routing, it needs to have the paths defined. Dynamic paths by nature build the page based on the URL. Therefore without the paths defined, NextJS would have no way to build the page before the URL is entered or clicked. 
 
 To do this we use getStaticPaths. This data can be fed in from a server and then create the paths to build the pages at build time still. The path and fs imports are used to build the path if the data is on the server. This might be if the data is in a JSON file or perhaps GraphQL, but I haven't looked into that in a while. 
-
-It 
 
 ```javascript
 import path from 'path';
@@ -154,7 +152,7 @@ export async function getServerSideProps(context) {
 
 ```
 
-Client side fetching as mentioned 
+Client side fetching as mentioned from above:
 
 ```javascript
 import { useEffect, useState } from 'react';
@@ -220,3 +218,5 @@ function Profile() {
   return <div>hello {data.name}!</div>
 }
 ```
+
+With the fetcher being a specific type of fetch, if using GraphQL. If you want the default fetch, leave it blank.

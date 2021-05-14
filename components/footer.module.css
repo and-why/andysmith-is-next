@@ -1,0 +1,24 @@
+.footer {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer_ul {
+  list-style: none;
+  color: white;
+  padding: 0;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.footer_ul li {
+  margin-bottom: 10px;
+}
+.footer_ul a {
+  display: flex;
+  justify-content: space-between;
+}

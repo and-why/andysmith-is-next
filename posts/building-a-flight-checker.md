@@ -2,8 +2,9 @@
 title: Flight Deal Tracker
 date: '2021-04-28'
 imageSrc: '/images/jacks-deals.png'
+height: '1946'
+width: '3792'
 ---
-
 This week I have been working on a really interesting project, and a *really useful one*... It's a flight tracker, moreover, it's a way to keep an eye on flight prices and notify me if there are any under a specified value. 
 
 For example, if I want to fly from Melbourne to Chieng Mai, for less than $400 return, then I can put in those details and each day this tool will look at all flights from Melbourne the Cheing Mai for the next 6 months, and if one comes in at under $400, it'll send me an SMS. I can create a list of different cities I want to visit and it'll look through them all.
