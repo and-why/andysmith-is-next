@@ -26,7 +26,7 @@ export default function Post(props) {
           alt={postData.title}
           height={postData.height}
           width={postData.width}
-          layout='intrinsic'
+          layout='responsive'
         />
       )}
 

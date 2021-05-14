@@ -1,9 +1,6 @@
 ---
 title: 100 Days of Code
 date: '2021-04-22'
-imageSrc: '/images/code100Image.png'
-height: '1946'
-width: '3792'
 excerpt: '#100daysofcode'
 ---
 
