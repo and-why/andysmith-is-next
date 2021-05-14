@@ -4,6 +4,7 @@ date: '2021-04-22'
 imageSrc: '/images/code100Image.png'
 height: '1946'
 width: '3792'
+excerpt: '#100daysofcode'
 ---
 
 #100DaysOfCode is a self directed challenge to keep you motivated in your learning. If you can commit to 100 back-to-back days of coding, you're likely going to be in a good place by the end of it. That's over 3 solid months.

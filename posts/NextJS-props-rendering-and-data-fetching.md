@@ -1,7 +1,7 @@
 ---
 title: NextJS rendering and data fetching
 date: '2021-05-12'
-
+excerpt: 'My initial understanding of pre-rendering options using Next.js.' 
 ---
 
 ## Static props rendering

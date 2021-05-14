@@ -4,6 +4,7 @@ date: '2021-05-07'
 imageSrc: '/images/code-days.png'
 height: '112'
 width: '69'
+excerpt: Of my 100 days of code, I've his the half way mark. That's 50 days of code, and time to change focus.
 ---
 I've hit the 50 days of code. As I mentioned in the previous post, it hasn't been every day for 50 days, as I've had most weekends to myself. I'm maintaining around 6+ hours per day during the week, so making a lot of progress. I also haven't committed to Github (the image) every day, even those days I did code I didn't always commit, as there was nothing to commit. 
 

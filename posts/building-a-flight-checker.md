@@ -4,6 +4,7 @@ date: '2021-04-28'
 imageSrc: '/images/jacks-deals.png'
 height: '1946'
 width: '3792'
+excerpt: This was a fun and interesting project, one which I' considering trying to run with.
 ---
 This week I have been working on a really interesting project, and a *really useful one*... It's a flight tracker, moreover, it's a way to keep an eye on flight prices and notify me if there are any under a specified value. 
 

@@ -1,6 +1,7 @@
 .footer {
-  background: rgba(0, 0, 0, 1);
+  background: #1c1e20;
   color: white;
+  padding: 1em;
 }
 
 .footer a {
@@ -11,8 +12,9 @@
   list-style: none;
   color: white;
   padding: 0;
-  margin: 3rem 0;
+  margin: 1rem auto;
   width: 100%;
+  max-width: 300px;
 }
 
 .footer_ul li {
@@ -21,4 +23,7 @@
 .footer_ul a {
   display: flex;
   justify-content: space-between;
+}
+.footer .flexColumn {
+  text-align: center;
 }
