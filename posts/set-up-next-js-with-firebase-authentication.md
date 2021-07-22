@@ -6,15 +6,15 @@ excerpt: 'A simple straight to the point guide to setting up firebase authentica
 
 ## Set up Firebase
 
-Go to Firebase.google.com and create a new database. 
+Go to [firebase.google.com](https://firebase.google.com) and create a new Firebase database. 
 
 Go to Authentication in the navigation menu and choose Get Started.
 
-We'll start with Google's sign-in provider, as it's the simplest. GitHub also make the experience easy. Facebook and Twitter have a few extra requirements, like having a privacy policy and T&Cs, which you can put in a fake URL.
+We'll start with Google's sign-in provider, as it's the simplest. GitHub also make the experience pretty easy. Facebook and Twitter have a few extra requirements, like having a privacy policy and T&Cs, which you can put in a fake URL.
 
 Choose Google and Enable. Choose a Project public facing name, this will appear on the popup, so make it friendly. Also choose a support email and hit save.
 
-Localhost should already be in there authorised domains, if you already have a domain for your app, add that to the authorised domains so you don't forget. I can't tell you the number of times I've launched something and it's broken when live and the amount of time it takes to remember this is the issue. 
+Localhost should already be in the authorised domains, if you already have a domain picked out for your app, add that to the authorised domains so you don't forget. I can't tell you the number of times I've launched something and it's broken when live and the amount of time it takes to remember this is the issue. 
 
 Now click the setting cog in Firebase, and create a new Web App. Name the app and take note of the apiKey, authDomain and projectId.
 
@@ -28,7 +28,7 @@ We'll also need to npm install firebase to get the functions within our Next JS 
 
 ## Initialising Firebase
 
-Next we need to initialise Firebase, we'll d this by creating a firebase.js file. I like to put this in a lib folder. So <pre>/lib/firebase.js</pre>
+Next we need to initialise Firebase, we'll do this by creating a firebase.js file. I like to put this in a lib folder. So /lib/firebase.js. 
 
 In here we need to initialise the app by using the following code:
 
