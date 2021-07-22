@@ -1,3 +1,9 @@
+---
+title: Set up Next JS with firebase authentication
+date: '2021-07-22'
+excerpt: 'A simple straight to the point guide to setting up firebase authentication for Next.js.' 
+---
+
 ## Firestore API calling data
 
 Create a service Account within Google Firebase Console.
