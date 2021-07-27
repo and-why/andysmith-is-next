@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Recoleta-regular';
+  src: url('recoleta-regulardemo.otf');
+  src: url('recoleta-regulardemo.otf?#iefix') format('embedded-opentype'),
+    url('recoleta-regulardemo.otf') format('otf'), url('recoleta-regulardemo.otf') format('oft');
+  font-weight: 400;
+  font-style: normal;
+}

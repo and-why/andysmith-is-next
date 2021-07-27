@@ -33,7 +33,8 @@ export default function Layout({ children, home }) {
             href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
             rel='stylesheet'
           />
-          <script src='https://kit.fontawesome.com/54fd6b2cb2.js' crossorigin='anonymous'></script>
+
+          <script src='https://kit.fontawesome.com/54fd6b2cb2.js' crossOrigin='anonymous'></script>
         </Head>
         <header className={styles.header}>
           <Nav />
