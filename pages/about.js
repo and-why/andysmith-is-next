@@ -18,7 +18,7 @@ export default function About() {
         things I understand.
       </p>
       <p className={styles.p}>
-        If you'd like to learn more or discuss an opportunity, please contant me via email:{' '}
+        If you'd like to learn more or discuss an opportunity, please contact me via email:{' '}
         <a href='mailto:contact@andysmith.is'>contact@andysmith.is</a>.
       </p>
     </Layout>
