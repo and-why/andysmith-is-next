@@ -30,7 +30,7 @@ export default function Layout({ children, home }) {
           <meta name='description' content="Andy Smith's Next.js Blog" />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap'
             rel='stylesheet'
           />
 
@@ -40,23 +40,20 @@ export default function Layout({ children, home }) {
           <Nav />
           {home ? (
             <div className={styles.main}>
-              <h1 className={styles.h1}>Homepage</h1>
+              <h1 className={styles.h1}>Andy Smith</h1>
+              <h2 className={styles.h2}>Freelance Web Developer</h2>
               <p className={styles.p}>
-                In April 2021, I took a gamble on my career. Throwing in the towel for the 10+ year
-                career in the marketing field. I've always loved and enjoyed spending time, even
-                whilst in marketing, writing code whereever I could within my roles; coding email
-                templates, landing pages, automation or internal tools. I've also built a few side
-                projects.
+                I love working with new technologies and more estabilshed ones. I enjoy making
+                user-friendly and performant website and applications.
               </p>
               <p className={styles.p}>
-                Therefore, you guessed it, I'm going to push hard towards a career in
-                web/application development. I'm using this site as both a place to write what I
-                learn and document the journey, as well as a playground for building things.
+                Welcome to my website where I share what I am learning about these technologies as
+                well as some of the websites and projects I have been working on.
               </p>
 
               <p className={styles.p}>
                 <Link href={`/about`}>
-                  <a>Read More About Me</a>
+                  <a>Find out more about me</a>
                 </Link>
               </p>
               <main className={styles.main}>{children}</main>

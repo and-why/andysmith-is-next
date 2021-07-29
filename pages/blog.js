@@ -14,9 +14,10 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
+      <h1 className={styles.h1}>Blog</h1>
       <div className={styles.blogList}>
-        <h2>Recent posts</h2>
+        <h2>Recent Posts</h2>
         <ul>
           {allPostsData.map(({ id, title, date, excerpt }, index) => (
             <li key={index}>

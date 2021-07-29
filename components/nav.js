@@ -16,8 +16,18 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href={'mailto:hello@andysmith.is'}>
-            <a>hello@andysmith.is</a>
+          <Link href={'/blog'}>
+            <a>blog</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={'/portfolio'}>
+            <a>portfolio</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={'mailto:contact@andysmith.is'}>
+            <a>contact@andysmith.is</a>
           </Link>
         </li>
       </ul>
