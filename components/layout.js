@@ -40,23 +40,41 @@ export default function Layout({ children, home }) {
           <Nav />
           {home ? (
             <div className={styles.main}>
-              <h1 className={styles.h1}>Andy Smith</h1>
-              <h2 className={styles.h2}>Freelance Web Developer</h2>
-              <p className={styles.p}>
-                I love working with new technologies and more estabilshed ones. I enjoy making
-                user-friendly and performant website and applications.
-              </p>
-              <p className={styles.p}>
-                Welcome to my website where I share what I am learning about these technologies as
-                well as some of the websites and projects I have been working on.
-              </p>
-
-              <p className={styles.p}>
-                <Link href={`/about`}>
-                  <a>Find out more about me</a>
-                </Link>
-              </p>
+              <div className={styles.main}>
+                <h1 className={styles.h1}>Andy Smith</h1>
+                <h2 className={styles.h2}>Freelance Web Developer</h2>
+                <p className={styles.p}>
+                  I love working with new technologies and more estabilshed ones. I enjoy making
+                  user-friendly and performant website and applications.
+                </p>
+                <p className={styles.p}>
+                  Welcome to my website where I share what I am learning about these technologies as
+                  well as some of the websites and projects I have been working on.
+                </p>
+                <p className={styles.p}>
+                  <Link href={`/about`}>
+                    <a>Find out more about me</a>
+                  </Link>
+                </p>
+              </div>
               <main className={styles.main}>{children}</main>
+              <h2 className={styles.h2}>About</h2>
+              <p className={styles.p}>
+                I am happiest when I am building something. Using the latest, greatest and most
+                suitbale web technologies for job.
+              </p>
+              <p className={styles.p}>
+                I am always looking for new projects to grow my skills and career in software
+                development. I'm currently taking on projects as a freelancer and open to discuss
+                opportunities with companies.
+              </p>
+              <p className={styles.p}>
+                I keep a <a href='/blog'>blog</a> mostly about new technologies I'm learning or
+                guides to things I understand.
+              </p>
+              <p className={styles.p}>
+                Give me a shout at: <a href='mailto:contact@andysmith.is'>contact@andysmith.is</a>.
+              </p>
             </div>
           ) : (
             <main className={styles.main}>{children}</main>

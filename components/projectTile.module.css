@@ -24,11 +24,11 @@
 }
 .contentbox {
   /* background: white; */
-  padding: 2em;
+  padding: 2em 0;
   width: 100%;
   color: #1c1e20;
 }
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   .projectBox {
     flex-wrap: nowrap;
   }
@@ -37,6 +37,9 @@
   }
   .descriptionBox {
     width: 50%;
+  }
+  .contentbox {
+    padding-left: 2em;
   }
 }
 

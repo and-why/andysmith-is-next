@@ -11,11 +11,6 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link href={'/about'}>
-            <a>about</a>
-          </Link>
-        </li>
-        <li>
           <Link href={'/blog'}>
             <a>blog</a>
           </Link>
