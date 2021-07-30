@@ -7,6 +7,7 @@ export default function ProjectTile({ detailname, name, tech }) {
     <NextLink href={`/portfolio/${detailname}`}>
       <a>
         <div className={styles.projectBox}>
+          <div className={styles.backgroundText}>{name}</div>
           <div className={styles.image}>
             <NextImage
               src={`/images/${detailname}.png`}
@@ -18,8 +19,10 @@ export default function ProjectTile({ detailname, name, tech }) {
             />
           </div>
           <div className={styles.descriptionBox}>
-            <h2>{name}</h2>
-            <p>{tech}</p>
+            <div className={styles.contentbox}>
+              <h2>{name}</h2>
+              <p>{tech}</p>
+            </div>
           </div>
         </div>
       </a>

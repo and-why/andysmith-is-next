@@ -14,7 +14,7 @@ export default function About() {
         />
         <ProjectTile
           detailname={'sonderescapes'}
-          name={'SonderEscapes'}
+          name={'Sonder Escapes'}
           tech={'Next.js, Firebase, ChakraUI, Amadeus API, Vercel'}
         />
         <ProjectTile

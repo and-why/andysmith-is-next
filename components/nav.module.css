@@ -30,7 +30,7 @@
   color: inherit;
 }
 .nav ul a:hover {
-  /* border-bottom: 5px white solid; */
+  color: rgba(249, 115, 22, 0.95);
 }
 .nav h1 {
   margin-bottom: 0 !important;

@@ -2,6 +2,7 @@ import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import styles from '../components/layout.module.css';
+import ProjectTile from '../components/projectTile';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,6 +16,12 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
+      <h2 className={styles.featuredWork}>Featured work</h2>
+      <ProjectTile
+        detailname={'barecomments'}
+        name={'Bare Comments'}
+        tech={'Next.js, Firebase, ChakraUI, Vercel'}
+      />
       <div className={styles.blogList}>
         <h2>Recent posts</h2>
         <ul>
