@@ -16,23 +16,24 @@ export default function Post(props) {
   return (
     <Layout>
       <div className={styles.post}>
-        <div className={styles.postDate}>{postData.date}</div>
         <h1 className={styles.postTitle}>{postData.title}</h1>
       </div>
+      <div className={styles.postContainer}>
+        <div className={styles.postDate}>{postData.date}</div>
+        {postData.imageSrc && (
+          <Image
+            src={postData.imageSrc}
+            alt={postData.title}
+            height={postData.height}
+            width={postData.width}
+            layout='responsive'
+          />
+        )}
 
-      {postData.imageSrc && (
-        <Image
-          src={postData.imageSrc}
-          alt={postData.title}
-          height={postData.height}
-          width={postData.width}
-          layout='responsive'
-        />
-      )}
-
-      <ReactMarkdown components={{ code: ({ node, ...props }) => <CodeBlock {...props} /> }}>
-        {postData.markdown}
-      </ReactMarkdown>
+        <ReactMarkdown components={{ code: ({ node, ...props }) => <CodeBlock {...props} /> }}>
+          {postData.markdown}
+        </ReactMarkdown>
+      </div>
     </Layout>
   );
 }

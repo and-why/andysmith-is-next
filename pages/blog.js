@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, title, date, excerpt }, index) => (
             <li key={index}>
               <Link href={`/posts/${id}`}>
-                <a>
+                <a className={styles.postLink}>
                   <div className={styles.post_topline}>
                     <h3>{title}</h3>
                     <span className={styles.post_date}>
