@@ -32,6 +32,10 @@ export default function BareCommentsPage() {
       <p className={styles.p}>
         The commenting system works with any website that supports iframes.
       </p>
+      <p className={styles.p}>
+        This was built by following along with{' '}
+        <a href='https://react2025.com/'>Lee Rob's React 2025</a> course.{' '}
+      </p>
       <h2>Additional Screenshots</h2>
       <div className={styles.flex}>
         <div className={styles.halfImage}>
