@@ -8,7 +8,7 @@ export default function BareCommentsPage() {
       <a href='/portfolio'>Back to portfolio</a>
       <h1>Bare Comments</h1>
       <p className={styles.p}>
-        Website: <a href='https://barecomments.vervel.app'>barecomments.vervel.app</a>
+        Website: <a href='https://barecomments.vercel.app/'>barecomments.vercel.app</a>
         <br />
         Github:{' '}
         <a href='https://github.com/and-why/barecomments'>github.com/and-why/barecomments</a>

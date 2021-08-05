@@ -7,11 +7,12 @@ export default function About() {
       <h1 className={styles.h1}>About</h1>
       <p className={styles.p}>
         I am happiest when I am building something. Using the latest, greatest and most suitbale web
-        technologies for job.
+        technologies for job. I have a background in marketing and understand business practices. I
+        make products and websites that are fast, user friendly and adhere to Google's wishes to
+        rank well.
       </p>
       <p className={styles.p}>
-        I am always looking for new projects to grow my skills and career in software development.
-        I'm currently taking on projects as a freelancer and open to discuss opportunities with
+        I'm currently taking on new projects as a freelancer and open to discuss opportunities with
         companies.
       </p>
       <p className={styles.p}>
