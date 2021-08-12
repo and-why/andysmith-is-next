@@ -8,7 +8,7 @@ export default function sonderescapesPage() {
       <a href='/portfolio'>Back to portfolio</a>
       <h1>SonderEscapes - Luxury Hotel Search</h1>
       <p className={styles.p}>
-        Website: <a href='https://sonderescapes.vervel.app'>sonderescapes.vervel.app</a>
+        Website: <a href='https://sonderescapes.vercel.app'>sonderescapes.vercel.app</a>
         <br />
         Github:{' '}
         <a href='https://github.com/and-why/luxury_hotels '>github.com/and-why/luxury_hotels</a>

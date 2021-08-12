@@ -8,7 +8,7 @@ export default function mewsPage() {
       <a href='/portfolio'>Back to portfolio</a>
       <h1>The Mews Retreat</h1>
       <p className={styles.p}>
-        Website: <a href='https://themewsretreat.vervel.app'>themewsretreat.vervel.app</a>
+        Website: <a href='https://themewsretreat.vercel.app'>themewsretreat.vercel.app</a>
         <br />
         Github:{' '}
         <a href='https://github.com/and-why/the-mews-retreat  '>
