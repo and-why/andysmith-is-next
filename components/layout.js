@@ -52,20 +52,23 @@ export default function Layout({ children, home }) {
                   well as some of the websites and projects I have been working on.
                 </p>
                 <p className={styles.p}>
-                  <Link href={`/about`}>
+                  <Link href={`#about`}>
                     <a>Find out more about me</a>
                   </Link>
                 </p>
               </div>
               <main className={styles.main}>{children}</main>
-              <h2 className={styles.h2}>About</h2>
+              <h2 className={styles.h2} id='about'>
+                About
+              </h2>
               <p className={styles.p}>
                 I am happiest when I am building something. Using the latest, greatest and most
-                suitbale web technologies for job.
+                suitbale web technologies for job. I have a background in marketing and understand
+                business practices. I make products and websites that are fast, user friendly and
+                adhere to Google's wishes to rank well.
               </p>
               <p className={styles.p}>
-                I am always looking for new projects to grow my skills and career in software
-                development. I'm currently taking on projects as a freelancer and open to discuss
+                I'm currently taking on new projects as a freelancer and open to discuss
                 opportunities with companies.
               </p>
               <p className={styles.p}>
