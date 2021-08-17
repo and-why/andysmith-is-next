@@ -1,12 +1,16 @@
 import Layout from '../../components/layout';
 import NextImage from 'next/image';
+import Link from 'next/link';
 import styles from '../../components/layout.module.css';
+import { motion } from 'framer-motion';
 
 export default function sonderescapesPage() {
   return (
     <Layout>
-      <a href='/portfolio'>Back to portfolio</a>
-      <h1>SonderEscapes - Luxury Hotel Search</h1>
+      <Link href='/portfolio'>
+        <a>Back to portfolio</a>
+      </Link>
+      <motion.h2 layoutId='title'>Sonder Escapes</motion.h2>
       <p className={styles.p}>
         Website: <a href='https://sonderescapes.vercel.app'>sonderescapes.vercel.app</a>
         <br />
@@ -15,7 +19,9 @@ export default function sonderescapesPage() {
       </p>
       <p className={styles.p}>Technology: Next.js, Firebase, Amadeus API, ChakraUI, Vercel</p>
       <div className={styles.mb2}>
-        <NextImage src={`/images/sonderescapes.png`} height='500px' width='500px' />
+        <motion.figure layoutId='image'>
+          <NextImage src={`/images/sonderescapes.png`} height='500px' width='500px' />
+        </motion.figure>
       </div>
       <h2>Brief</h2>
       <p className={styles.p}>

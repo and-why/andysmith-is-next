@@ -18,8 +18,8 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <h2 className={styles.featuredWork}>Featured work</h2>
       <ProjectTile
-        detailname={'barecomments'}
-        name={'Bare Comments'}
+        detailname={'sonderescapes'}
+        name={'Sonder Escapes'}
         tech={'Next.js, Firebase, ChakraUI, Vercel'}
       />
       <div className={styles.blogList}>

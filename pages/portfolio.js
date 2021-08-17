@@ -8,11 +8,6 @@ export default function About() {
       <h1 className={styles.h1}>Portfolio</h1>
       <div className={styles.portfolioProjects}>
         <ProjectTile
-          detailname={'barecomments'}
-          name={'Bare Comments'}
-          tech={'Next.js, Firebase, ChakraUI, Vercel'}
-        />
-        <ProjectTile
           detailname={'sonderescapes'}
           name={'Sonder Escapes'}
           tech={'Next.js, Firebase, ChakraUI, Amadeus API, Vercel'}

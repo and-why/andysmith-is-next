@@ -3,12 +3,20 @@ import Link from 'next/link';
 import Nav from './nav';
 import Footer from '../components/footer';
 import styles from './layout.module.css';
+import { motion } from 'framer-motion';
 
 const name = 'AndySmith.is';
 
 export default function Layout({ children, home }) {
   return (
-    <div>
+    <motion.div
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        delay: 0.1,
+      }}
+    >
       <div className='container'>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -85,6 +93,6 @@ export default function Layout({ children, home }) {
         </header>
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 }
