@@ -20,22 +20,18 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <FullPage>
-      <Container>
-        <Layout page='home'>
-          <AboutMe />
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              delay: 0.2,
-            }}
-          >
-            Featured Work
-          </motion.h2>
-          <PortfolioList />
-        </Layout>
-      </Container>
-    </FullPage>
+    <Layout page='home'>
+      <AboutMe />
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+      >
+        Featured Work
+      </motion.h2>
+      <PortfolioList />
+    </Layout>
   );
 }

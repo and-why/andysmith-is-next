@@ -19,11 +19,15 @@ body {
   text-rendering: optimizeLegibility;
   background: #fff;
   overflow-x: hidden;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.35;
 }
-
+@media (min-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+}
 *::selection {
   background: var(--primary);
   color: white;

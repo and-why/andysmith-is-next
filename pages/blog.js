@@ -31,42 +31,37 @@ export const BlogWrap = styled.div`
 
 export default function Home({ allPostsData }) {
   return (
-    <FullPage>
-      <Layout page='blog'>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.2,
-          }}
-        >
-          <BlogWrap>
-            <div>
-              <h2>Recent Posts</h2>
-              <ul>
-                {allPostsData.map(({ id, title, date, excerpt }, index) => (
-                  <li key={index}>
-                    <Link href={`/posts/${id}`}>
-                      <a>
-                        <Flex>
-                          <h3 layoutId={title}>{title}</h3>
-                          <span layoutId={date}>
-                            {new Date(date)
-                              .toLocaleDateString()
-                              .replace('/', '-')
-                              .replace('/', '-')}
-                          </span>
-                        </Flex>
-                        {excerpt && <div>{excerpt}</div>}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </BlogWrap>
-        </motion.div>
-      </Layout>
-    </FullPage>
+    <Layout page='blog'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 0.2,
+        }}
+      >
+        <BlogWrap>
+          <div>
+            <h2>Recent Posts</h2>
+            <ul>
+              {allPostsData.map(({ id, title, date, excerpt }, index) => (
+                <li key={index}>
+                  <Link href={`/posts/${id}`}>
+                    <a>
+                      <Flex>
+                        <h3 layoutId={title}>{title}</h3>
+                        <span layoutId={date}>
+                          {new Date(date).toLocaleDateString().replace('/', '-').replace('/', '-')}
+                        </span>
+                      </Flex>
+                      {excerpt && <div>{excerpt}</div>}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </BlogWrap>
+      </motion.div>
+    </Layout>
   );
 }
