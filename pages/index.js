@@ -1,8 +1,13 @@
 import Layout from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import styles from '../components/layout.module.css';
-import ProjectTile from '../components/projectTile';
+
+import AboutMe from '../components/AboutMe';
+import { FullPage } from '../components/styled-components/FullPage';
+import PortfolioList from '../components/PortfolioList';
+import { H2 } from '../components/styled-components/Headings';
+import { Container } from '../components/styled-components/Container';
+import { motion } from 'framer-motion';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,33 +20,22 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
-      <h2 className={styles.featuredWork}>Featured work</h2>
-      <ProjectTile
-        detailname={'barecomments'}
-        name={'Bare Comments'}
-        tech={'Next.js, Firebase, ChakraUI, Vercel'}
-      />
-      <div className={styles.blogList}>
-        <h2>Recent posts</h2>
-        <ul>
-          {allPostsData.map(({ id, title, date, excerpt }, index) => (
-            <li key={index}>
-              <Link href={`/posts/${id}`}>
-                <a>
-                  <div className={styles.post_topline}>
-                    <h3>{title}</h3>
-                    <span className={styles.post_date}>
-                      {new Date(date).toLocaleDateString().replace('/', '-').replace('/', '-')}
-                    </span>
-                  </div>
-                  {excerpt && <div className={styles.excerpt}>{excerpt}</div>}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Layout>
+    <FullPage>
+      <Container>
+        <Layout page='home'>
+          <AboutMe />
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.2,
+            }}
+          >
+            Featured Work
+          </motion.h2>
+          <PortfolioList />
+        </Layout>
+      </Container>
+    </FullPage>
   );
 }

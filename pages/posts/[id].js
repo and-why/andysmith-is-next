@@ -3,46 +3,71 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import styles from '../../components/layout.module.css';
 import CodeBlock from '../../components/codeblock';
+import { Container } from '../../components/styled-components/Container';
+import { FullPage } from '../../components/styled-components/FullPage';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { H1 } from '../../components/styled-components/Headings';
 
-export default function Post(props) {
-  const postData = props.postData;
+export const BlogPostWrap = styled.div`
+  em {
+    font-family: 'Courier New', Courier, monospace;
+    background: black;
+    color: white;
+    padding: 0.125em 0.5em;
+  }
+`;
 
-  if (!postData.markdown) {
+export default function Post({ post }) {
+  if (!post.markdown) {
     return <div>Loading!</div>;
   }
 
   return (
-    <Layout>
-      <div className={styles.post}>
-        <h1 className={styles.postTitle}>{postData.title}</h1>
-      </div>
-      <div className={styles.postContainer}>
-        <div className={styles.postDate}>{postData.date}</div>
-        {postData.imageSrc && (
-          <Image
-            src={postData.imageSrc}
-            alt={postData.title}
-            height={postData.height}
-            width={postData.width}
-            layout='responsive'
-          />
-        )}
+    <FullPage>
+      <Container>
+        <Layout>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.2,
+            }}
+          >
+            <BlogPostWrap>
+              <H1 margin='1em 0'>{post.title}</H1>
+              <div>
+                <div>{post.date}</div>
+                {post.imageSrc && (
+                  <Image
+                    src={post.imageSrc}
+                    alt={post.title}
+                    height={post.height}
+                    width={post.width}
+                    layout='responsive'
+                  />
+                )}
 
-        <ReactMarkdown components={{ code: ({ node, ...props }) => <CodeBlock {...props} /> }}>
-          {postData.markdown}
-        </ReactMarkdown>
-      </div>
-    </Layout>
+                <ReactMarkdown
+                  components={{ code: ({ node, ...props }) => <CodeBlock {...props} /> }}
+                >
+                  {post.markdown}
+                </ReactMarkdown>
+              </div>
+            </BlogPostWrap>
+          </motion.div>
+        </Layout>
+      </Container>
+    </FullPage>
   );
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const post = await getPostData(params.id);
   return {
     props: {
-      postData,
+      post,
     },
   };
 }
