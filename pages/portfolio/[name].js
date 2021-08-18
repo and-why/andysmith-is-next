@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import useSWR from 'swr';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { fetcher } from '../../lib/fetcher';
 import Layout from '../../components/layout';
 import { Text } from '../../components/styled-components/Text';
@@ -15,6 +15,7 @@ import { H2 } from '../../components/styled-components/Headings';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { getAllPortfolios } from '../../lib/functions';
 import { portfolio } from '../../data';
+import { LinkButton } from '../../components/styled-components/Buttons';
 
 export const PortfolioItemStyle = styled.div`
   display: flex;
@@ -38,50 +39,33 @@ export const PortfolioItemStyle = styled.div`
 `;
 export const Gallery = styled.div`
   .scroll-container {
-    height: calc(300px + 5em);
+    height: calc(300px + 100px);
     display: flex;
     direction: row;
     cursor: grab;
     margin-bottom: 2em;
     @media (max-width: 400px) {
-      height: calc(150px + 5em);
+      height: calc(150px + 100px);
     }
   }
 `;
 export const ImageWrap = styled.div`
   flex-shrink: 0;
   /* border: 2em solid var(--primary); */
-  background: var(--primary);
-  padding: 2em;
-  margin: 0.5em;
+  padding: 50px;
+  margin: 0 0.5em;
   border-radius: 10px;
+  ${(props) =>
+    props.brandColor &&
+    css`
+      background: ${(props) => props.brandColor};
+    `}
   img {
     border-radius: 2px;
     height: 300px;
     width: auto;
     @media (max-width: 400px) {
       height: 150px;
-    }
-  }
-`;
-
-export const ExternalButton = styled.a`
-  position: relative;
-  text-decoration: none;
-  padding: 0.5em 2em;
-  text-decoration: none;
-  background: #e5e5e5;
-  color: black;
-  border-radius: 10px;
-  text-align: center;
-  svg {
-    margin-left: 2px;
-  }
-  &:hover {
-    background: var(--primary);
-    color: white;
-    svg g {
-      stroke: #fff;
     }
   }
 `;
@@ -123,7 +107,7 @@ export default function SinglePortfolioItem({ data }) {
         <Gallery>
           <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
             {item.images.map((image, i) => (
-              <ImageWrap>
+              <ImageWrap brandColor={item.brandColor}>
                 <Image
                   src={`/images/${image}.png`}
                   height='402px'
@@ -142,7 +126,7 @@ export default function SinglePortfolioItem({ data }) {
             <Text>{p}</Text>
           ))}
         </TextBlock>
-        <ExternalButton href={item.website}>
+        <LinkButton href={item.website}>
           Visit
           <svg width='15px' height='15px' viewBox='0 0 24 24'>
             <g
@@ -159,7 +143,7 @@ export default function SinglePortfolioItem({ data }) {
               <path d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'></path>
             </g>
           </svg>
-        </ExternalButton>
+        </LinkButton>
       </motion.div>
     </Layout>
   );

@@ -119,5 +119,10 @@ export default function stylesForAll(props) {
       css`
         font-style: ${props.fontStyle};
       `}
+  ${(props) =>
+      props.textAlign &&
+      css`
+        text-align: ${props.textAlign};
+      `}
   `;
 }

@@ -2,7 +2,8 @@ export const portfolio = [
   {
     id: '1',
     name: 'sonderescapes',
-    website: 'https://sonderescapes.vercel.com',
+    website: 'https://sonderescapes.vercel.app',
+    brandColor: '#11203d',
     title: 'Sonder Escapes',
     image: 'sonderescapes-icon',
     technology: 'Next.js, Firebase, Amadeus API, ChakraUI, Vercel',
@@ -27,10 +28,11 @@ export const portfolio = [
   {
     id: '2',
     name: 'mews',
-    website: 'https://themewsretreat.vercel.com',
+    website: 'https://themewsretreat.vercel.app',
     title: 'The Mews Retreat',
     image: 'mews-icon',
     technology: 'Next.js, Sanity.io, ChakraUI, Vercel',
+    brandColor: '#fe5a5e',
     brief: [
       "The Mews Retreat is a website for an Airbnb accommodation, showcasing the space and listing amenities in a way the owner wanted to represent the property. It's a very clean and simple design.",
       'The CMS is built with Sanity.io, as it is really intuitive for non-technical users, and has a powerful and hugely customisable CMS that works great with static websites.',
