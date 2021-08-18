@@ -40,3 +40,24 @@ export const Button = styled.button`
       color: ${(props) => props.theme.color.black};
     `}
 `;
+
+export const LinkButton = styled.a`
+  position: relative;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #e5e5e5;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  svg {
+    margin-left: 2px;
+  }
+  &:hover {
+    background: var(--primary);
+    color: white;
+    svg g {
+      stroke: #fff;
+    }
+  }
+`;
