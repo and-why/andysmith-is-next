@@ -18,6 +18,7 @@ export const BlogPostWrap = styled.div`
   }
   pre {
     max-width: 600px;
+    margin: 1em auto;
     @media (max-width: 620px) {
       max-width: 550px;
     }
