@@ -20,7 +20,6 @@ export const PortfolioItemStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 2em;
   width: 100%;
   div {
@@ -32,37 +31,10 @@ export const PortfolioItemStyle = styled.div`
   p {
     margin: 0;
   }
-  a {
-    position: relative;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0.5em 2em;
-    text-decoration: none;
-    background: #e5e5e5;
-    color: black;
-    border-radius: 10px;
-    text-align: center;
-    svg {
-      margin-left: 2px;
-    }
-    &:hover {
-      background: var(--primary);
-      color: white;
-      svg g {
-        stroke: #fff;
-      }
-    }
-  }
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
-    .div {
-      order: 1;
-    }
-    figure {
-      order: 2;
-    }
-  }
+
+  /* @media (max-width: 500px) {
+    flex-wrap: wrap;
+  } */
 `;
 export const Gallery = styled.div`
   .scroll-container {
@@ -70,6 +42,7 @@ export const Gallery = styled.div`
     display: flex;
     direction: row;
     cursor: grab;
+    margin-bottom: 2em;
     @media (max-width: 400px) {
       height: calc(150px + 5em);
     }
@@ -88,6 +61,27 @@ export const ImageWrap = styled.div`
     width: auto;
     @media (max-width: 400px) {
       height: 150px;
+    }
+  }
+`;
+
+export const ExternalButton = styled.a`
+  position: relative;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  background: #e5e5e5;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+  svg {
+    margin-left: 2px;
+  }
+  &:hover {
+    background: var(--primary);
+    color: white;
+    svg g {
+      stroke: #fff;
     }
   }
 `;
@@ -116,31 +110,6 @@ export default function SinglePortfolioItem({ data }) {
                 <motion.h2 layoutId={item.id}>{item.title}</motion.h2>
                 <motion.p layoutId={item.technology}>Technology: {item.technology}</motion.p>
               </div>
-              <motion.a
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: 0.2,
-                }}
-                href={item.website}
-              >
-                Visit
-                <svg width='15px' height='15px' viewBox='0 0 24 24'>
-                  <g
-                    id='external_link'
-                    class='icon_svg-stroke'
-                    stroke='#000'
-                    stroke-width='1.5'
-                    fill='none'
-                    fill-rule='evenodd'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  >
-                    <polyline points='17 13.5 17 19.5 5 19.5 5 7.5 11 7.5'></polyline>
-                    <path d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'></path>
-                  </g>
-                </svg>
-              </motion.a>
             </Flex>
           </PortfolioItemStyle>
 
@@ -152,12 +121,6 @@ export default function SinglePortfolioItem({ data }) {
               delay: 0.2,
             }}
           >
-            <TextBlock marginBottom='1em'>
-              <H2>Brief</H2>
-              {item.brief.map((p) => (
-                <Text>{p}</Text>
-              ))}
-            </TextBlock>
             <H2>Gallery</H2>
             <Gallery>
               <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
@@ -175,6 +138,30 @@ export default function SinglePortfolioItem({ data }) {
                 ))}
               </ScrollContainer>
             </Gallery>
+            <TextBlock marginBottom='2em'>
+              <H2>Brief</H2>
+              {item.brief.map((p) => (
+                <Text>{p}</Text>
+              ))}
+            </TextBlock>
+            <ExternalButton href={item.website}>
+              Visit
+              <svg width='15px' height='15px' viewBox='0 0 24 24'>
+                <g
+                  id='external_link'
+                  class='icon_svg-stroke'
+                  stroke='#000'
+                  stroke-width='1.5'
+                  fill='none'
+                  fill-rule='evenodd'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                >
+                  <polyline points='17 13.5 17 19.5 5 19.5 5 7.5 11 7.5'></polyline>
+                  <path d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'></path>
+                </g>
+              </svg>
+            </ExternalButton>
           </motion.div>
         </Layout>
       </Container>
