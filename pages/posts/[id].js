@@ -46,7 +46,7 @@ export default function Post({ post }) {
   }
 
   return (
-    <Layout>
+    <Layout page='blog' pageTitle={post.title} description={post.excerpt}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

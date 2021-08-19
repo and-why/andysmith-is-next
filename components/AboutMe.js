@@ -1,8 +1,28 @@
 import { Text } from './styled-components/Text';
 import { TextBlock } from './styled-components/TextBlock';
 import { H1 } from './styled-components/Headings';
-import { Container } from './styled-components/Container';
+import { annotate } from 'rough-notation';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { createElement, useRef, useEffect } from 'react';
+
+export const Highlight = styled.span`
+  @keyframes slide {
+    0% {
+      background: linear-gradient(to right, white 50%, var(--primary) 50%);
+      background-size: 200% 100%;
+    }
+    50% {
+      background-size: 200% 100%;
+    }
+    100% {
+      background: linear-gradient(to right, var(--primary) 34%, white 65%);
+      background-size: 300% 100%;
+    }
+  }
+  background-position: left bottom;
+  transition: slide 0.3s linear;
+`;
 
 export default function AboutMe() {
   return (

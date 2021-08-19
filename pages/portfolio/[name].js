@@ -75,14 +75,20 @@ export default function SinglePortfolioItem({ data }) {
   const item = data.filter((data) => data.name === router.query.name)[0];
 
   return (
-    <Layout>
+    <Layout
+      pageTitle={`${item.title} case study`}
+      description={`Andy Smith portfio piece for ${item.title}. ${item.brief}`}
+    >
       <PortfolioItemStyle>
         <motion.figure layoutId={item.image}>
           <Image
+            alt={item.title}
             src={`/images/${item.image}.png`}
             height='100px'
             width='100px'
             quality='100'
+            placeholder='blur'
+            blurDataURL='/images/placeholder.png'
             objectFit='contain'
             objectPosition='bottom'
           />
@@ -105,20 +111,33 @@ export default function SinglePortfolioItem({ data }) {
       >
         <H2>Gallery</H2>
         <Gallery>
-          <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
-            {item.images.map((image, i) => (
-              <ImageWrap brandColor={item.brandColor}>
-                <Image
-                  src={`/images/${image}.png`}
-                  height='402px'
-                  width='689px'
-                  objectFit='contain'
-                  quality='100'
-                  layoutId={item.image}
-                />
-              </ImageWrap>
-            ))}
-          </ScrollContainer>
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            transition={{
+              delay: 0.2,
+              type: 'spring',
+              damping: 100,
+              stiffness: 1000,
+            }}
+          >
+            <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
+              {item.images.map((image, i) => (
+                <ImageWrap brandColor={item.brandColor}>
+                  <Image
+                    alt={image.alt || image.name}
+                    src={`/images/${image.name}.png`}
+                    height='402px'
+                    width='689px'
+                    objectFit='contain'
+                    placeholder='blur'
+                    blurDataURL='/images/placeholder.png'
+                    quality='100'
+                  />
+                </ImageWrap>
+              ))}
+            </ScrollContainer>
+          </motion.div>
         </Gallery>
         <TextBlock marginBottom='2em'>
           <H2>Brief</H2>

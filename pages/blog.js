@@ -38,7 +38,7 @@ export const BlogWrap = styled.div`
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout page='blog'>
+    <Layout page='blog' pageTitle='Web Development Blog'>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
