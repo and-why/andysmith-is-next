@@ -84,8 +84,8 @@ export default function SinglePortfolioItem({ data }) {
           <Image
             alt={item.title}
             src={`/images/${item.image}.png`}
-            height='100px'
-            width='100px'
+            height={100}
+            width={100}
             quality='100'
             placeholder='blur'
             blurDataURL='/images/placeholder.png'
@@ -127,8 +127,8 @@ export default function SinglePortfolioItem({ data }) {
                   <Image
                     alt={image.alt || image.name}
                     src={`/images/${image.name}.png`}
-                    height='402px'
-                    width='689px'
+                    height={402}
+                    width={689}
                     objectFit='contain'
                     placeholder='blur'
                     blurDataURL='/images/placeholder.png'

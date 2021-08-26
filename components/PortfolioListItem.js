@@ -2,24 +2,25 @@ import { H2 } from './styled-components/Headings';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Flex } from './styled-components/Flex';
-import { Text } from './styled-components/Text';
 import { TextBlock } from './styled-components/TextBlock';
 import { motion } from 'framer-motion';
 
 export default function PortfolioListItem({ data }) {
-  console.log(data);
+  const imageSrc = `/images/${data.image}.png`;
+
   return (
     <Link href={`/portfolio/${data.name}`}>
       <a>
         <Flex>
           <motion.figure layoutId={data.image}>
             <Image
-              src={`/images/${data.image}.png`}
+              src={imageSrc}
               alt={`${data.title} icon`}
-              height='100px'
-              width='100px'
+              height={100}
+              width={100}
               objectFit='cover'
-              objectPosition='bottom'
+              placeholder='blur'
+              blurDataURL='/images/placeholder.png'
             />
           </motion.figure>
           <TextBlock padding='1em'>
