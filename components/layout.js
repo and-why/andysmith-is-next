@@ -35,6 +35,7 @@ export default function Layout({ children, page, pageTitle, description }) {
         <meta property='og:title' content={pageTitle || 'Freelance Web Developer'} />
         <meta property='og:description' content={description || backupDesc} />
         <meta property='og:image' content='https://www.andysmith.is/images/andy-smith.png' />
+        <meta name='robots' content='index' />
       </Head>
       <FullPage>
         <Container>
