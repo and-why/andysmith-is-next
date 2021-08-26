@@ -8,7 +8,7 @@ export const Button = styled.button`
   cursor: pointer;
   font-size: 1em;
   transition: all 0.3s ease;
-  color: #10203d;
+  color: var(--black);
   font-family: 'Inter', sans-serif;
   :hover,
   :focus {
@@ -19,13 +19,13 @@ export const Button = styled.button`
     props.primary &&
     css`
       background: ${(props) => props.theme.color.primary};
-      color: white;
+      color: var(--black);
     `}
   ${(props) =>
     props.secondary &&
     css`
       background: ${(props) => props.theme.color.secondary};
-      color: white;
+      color: var(--black);
     `}
   ${(props) =>
     props.dark &&
@@ -47,7 +47,7 @@ export const LinkButton = styled.a`
   padding: 0.5em 1em;
   text-decoration: none;
   background: #e5e5e5;
-  color: black;
+  color: var(--black);
   border-radius: 10px;
   text-align: center;
   svg {

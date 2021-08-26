@@ -6,7 +6,7 @@ export const portfolio = [
     brandColor: '#11203d',
     title: 'Sonder Escapes',
     image: 'sonderescapes-icon',
-    technology: 'Next.js, Firebase, Amadeus API, ChakraUI, Vercel',
+    technology: 'React, Next.js, Firebase, Amadeus API, ChakraUI, Vercel',
     brief: [
       'SonderEscapes is a hotel searching platform, using the Amadeus API to source properties. The design is heavily inspired by Airbnb, with my own tweaks.',
       'A user can currently create a free account using Github oAuth powered by Firebase. Once a user has an account they can favourite hotels and view those favourite hotels. They can also see their account details and add a Date of Birth and gender.',
@@ -37,7 +37,7 @@ export const portfolio = [
     website: 'https://themewsretreat.vercel.app',
     title: 'The Mews Retreat',
     image: 'mews-icon',
-    technology: 'Next.js, Sanity.io, ChakraUI, Vercel',
+    technology: 'React, Next.js, Sanity.io, ChakraUI, Vercel',
     brandColor: '#fe5a5e',
     brief: [
       "The Mews Retreat is a website for an Airbnb accommodation, showcasing the space and listing amenities in a way the owner wanted to represent the property. It's a very clean and simple design.",

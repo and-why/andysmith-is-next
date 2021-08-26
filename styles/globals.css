@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   --primary: rgba(249, 115, 22, 0.95);
+  --black: #10203d;
 }
 *,
 *:before,
@@ -21,7 +22,7 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 @media (min-width: 500px) {
   body {
@@ -52,4 +53,8 @@ h4,
 h5,
 h6 {
   margin: 0 0 1em;
+}
+
+p {
+  font-size: 15px;
 }

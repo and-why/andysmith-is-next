@@ -1,19 +1,13 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Image from 'next/image';
-import useSWR from 'swr';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
-import { fetcher } from '../../lib/fetcher';
 import Layout from '../../components/layout';
 import { Text } from '../../components/styled-components/Text';
-import { Container } from '../../components/styled-components/Container';
-import { FullPage } from '../../components/styled-components/FullPage';
 import { Flex } from '../../components/styled-components/Flex';
 import { TextBlock } from '../../components/styled-components/TextBlock';
 import { H2 } from '../../components/styled-components/Headings';
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { getAllPortfolios } from '../../lib/functions';
 import { portfolio } from '../../data';
 import { LinkButton } from '../../components/styled-components/Buttons';
 
@@ -32,10 +26,6 @@ export const PortfolioItemStyle = styled.div`
   p {
     margin: 0;
   }
-
-  /* @media (max-width: 500px) {
-    flex-wrap: wrap;
-  } */
 `;
 export const Gallery = styled.div`
   .scroll-container {
@@ -51,7 +41,6 @@ export const Gallery = styled.div`
 `;
 export const ImageWrap = styled.div`
   flex-shrink: 0;
-  /* border: 2em solid var(--primary); */
   padding: 50px;
   margin: 0 0.5em;
   border-radius: 10px;
@@ -84,8 +73,8 @@ export default function SinglePortfolioItem({ data }) {
           <Image
             alt={item.title}
             src={`/images/${item.image}.png`}
-            height='100px'
-            width='100px'
+            height={100}
+            width={100}
             quality='100'
             placeholder='blur'
             blurDataURL='/images/placeholder.png'
@@ -127,8 +116,8 @@ export default function SinglePortfolioItem({ data }) {
                   <Image
                     alt={image.alt || image.name}
                     src={`/images/${image.name}.png`}
-                    height='402px'
-                    width='689px'
+                    height={402}
+                    width={689}
                     objectFit='contain'
                     placeholder='blur'
                     blurDataURL='/images/placeholder.png'

@@ -1,10 +1,10 @@
-import useSWR from 'swr';
-import { fetcher } from '../lib/fetcher';
 import PortfolioListItem from './PortfolioListItem';
 import { Grid } from './styled-components/Grid';
+import { portfolio } from '../data';
 
 export default function PortfolioList() {
-  const { data, error } = useSWR(`/api/portfolio/`, fetcher);
+  const data = portfolio;
+
   return (
     <Grid templateColumns='repeat(auto-fit, minmax(250px, 1fr))'>
       {data?.map((item) => {
