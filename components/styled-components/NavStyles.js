@@ -23,13 +23,13 @@ export const NavStyles = styled.nav`
       position: relative;
       text-decoration: none;
       background: #e5e5e5;
-      color: black;
+      color: var(--black);
       padding: 0.5em 1em;
       border-radius: 10px;
       font-weight: 500;
       &[aria-current='true'] {
         background: var(--primary);
-        color: white;
+        color: var(--black);
       }
       &:hover {
         background: var(--primary);
@@ -41,7 +41,7 @@ export const NavStyles = styled.nav`
       &.clickcopy:hover:after {
         content: '';
         position: absolute;
-        border: 10px solid #000;
+        border: 10px solid var(--black);
         border-color: transparent transparent black transparent;
         right: 50%;
         top: 17px;
@@ -53,7 +53,7 @@ export const NavStyles = styled.nav`
         top: 35px;
         right: 50%;
         transform: translateX(50%);
-        background: black;
+        background: var(--black);
         color: white;
         padding: 1em;
         border-radius: 10px;

@@ -10,17 +10,12 @@ export default function PortfolioListItem({ data }) {
   console.log(data);
   return (
     <Link href={`/portfolio/${data.name}`}>
-      <motion.a
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
+      <a>
         <Flex>
           <motion.figure layoutId={data.image}>
             <Image
               src={`/images/${data.image}.png`}
+              alt={`${data.title} icon`}
               height='100px'
               width='100px'
               objectFit='cover'
@@ -36,7 +31,7 @@ export default function PortfolioListItem({ data }) {
             </motion.p>
           </TextBlock>
         </Flex>
-      </motion.a>
+      </a>
     </Link>
   );
 }
