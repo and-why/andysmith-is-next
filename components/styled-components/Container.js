@@ -7,6 +7,7 @@ export const Container = styled.div`
   .full-width {
     width: 100%;
   }
+
   ${(props) =>
     props.width &&
     css`
