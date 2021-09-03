@@ -112,7 +112,7 @@ export default function SinglePortfolioItem({ data }) {
           >
             <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
               {item.images.map((image, i) => (
-                <ImageWrap brandColor={item.brandColor}>
+                <ImageWrap key={i} brandColor={`${item.brandColor}85`}>
                   <Image
                     alt={image.alt || image.name}
                     src={`/images/${image.name}.png`}
