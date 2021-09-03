@@ -134,7 +134,7 @@ export default function SinglePortfolioItem({ data }) {
             <Text>{p}</Text>
           ))}
         </TextBlock>
-        <LinkButton href={item.website}>
+        <LinkButton href={item.website} target='_blank'>
           Visit
           <svg width='15px' height='15px' viewBox='0 0 24 24'>
             <g
