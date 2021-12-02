@@ -1,5 +1,37 @@
 export const portfolio = [
   {
+    id: '0',
+    name: 'eadee',
+    website: 'https://eadee.co',
+    brandColor: '#f4a261',
+    title: 'EadeeCo',
+    image: 'eadee-icon',
+    technology:
+      'React, Next.js, PostgreSQL, Strapi CMS, Styled Components, Vercel, AWS (EC2, RDS, S3 bucket)',
+    brief: [
+      'Eadee is an Employee Directory SaaS. It is built using a number of technologies, the brochure website is built on React, the Next.js framework deployed on Vercel. Strapi is used for the CMS hosted on AWS with webhooks in place for deployment from Github when the main branch is updated.',
+      'The application is also built on Next.js and deployed through Vercel. It uses PostgreSQL as the database which is hosted on Heroku. I used Styled components throughout both the website and application.',
+    ],
+    images: [
+      { name: 'eadee', alt: 'Eadee website screenshot' },
+      { name: 'eadee1', alt: 'Eadee website screenshot' },
+      { name: 'eadee2', alt: 'Eadee website screenshot' },
+      { name: 'eadee3', alt: 'Eadee website screenshot' },
+      { name: 'eadee8', alt: 'Eadee website screenshott' },
+      {
+        name: 'eadee4',
+        alt: 'Eadee website screenshot',
+      },
+      {
+        name: 'eadee5',
+        alt: 'Eadee website screenshot',
+      },
+      { name: 'eadee6', alt: 'Eadee website screenshot' },
+      { name: 'eadee7', alt: 'Eadee website screenshot' },
+      { name: 'eadee9', alt: 'Eadee website screenshot' },
+    ],
+  },
+  {
     id: '1',
     name: 'sonderescapes',
     website: 'https://sonderescapes.vercel.app',
