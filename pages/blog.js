@@ -28,9 +28,6 @@ export const BlogWrap = styled.div`
   li {
     padding: 1em 0;
     margin-bottom: 0.5em;
-    /* &:hover {
-      color: var(--primary);
-    } */
   }
 `;
 
@@ -56,7 +53,7 @@ export default function Home({ allPostsData }) {
                     {excerpt && <div>{excerpt}</div>}
                   </div>
                   <Flex justify='flex-end; @media(max-width:501px){justify-content: flex-start}'>
-                    <Link href={`/posts/${id}`}>
+                    <Link href={`/posts/${id}`} passHref>
                       <LinkButton>Read More</LinkButton>
                     </Link>
                   </Flex>

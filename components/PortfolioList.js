@@ -7,8 +7,8 @@ export default function PortfolioList() {
 
   return (
     <Grid templateColumns='repeat(auto-fit, minmax(250px, 1fr))'>
-      {data?.map((item) => {
-        return <PortfolioListItem data={item} />;
+      {data?.map((item, index) => {
+        return <PortfolioListItem key={index} data={item} />;
       })}
     </Grid>
   );
