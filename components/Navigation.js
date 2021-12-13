@@ -24,7 +24,7 @@ export default function Navigation({ page }) {
         <li>
           <Link href='https://www.github.com/and-why' external target='_blank'>
             <a>
-              Github
+              github
               <svg width='15px' height='15px' viewBox='0 0 24 24'>
                 <g
                   id='external_link'

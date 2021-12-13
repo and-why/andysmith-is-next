@@ -51,7 +51,7 @@ export const ImageWrap = styled.div`
     `}
   img {
     border-radius: 2px;
-    height: 300px;
+    height: 300px !important;
     width: auto;
     @media (max-width: 400px) {
       height: 150px;
