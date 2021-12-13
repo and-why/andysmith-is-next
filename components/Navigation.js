@@ -48,6 +48,11 @@ export default function Navigation({ page }) {
             contact@andysmith.is
           </a>
         </li>
+        <li>
+          <a href='https://cal.com/andysmith-is/short' data-text='click to copy'>
+            book a call
+          </a>
+        </li>
       </motion.ul>
     </NavStyles>
   );
