@@ -23,6 +23,7 @@ export default function Layout({ children, page, pageTitle, description }) {
       <Head>
         <title>{pageTitle || 'Freelance Web Developer'} | Andy Smith</title>
         <meta name='description' content={description || backupDesc} />
+        <link rel='shortcut icon' type='image/jpg' href='/static/favicon.png' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@andysmith_is' />
         <meta name='twitter:title' content={pageTitle || 'Freelance Web Developer'} />
