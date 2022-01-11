@@ -1,34 +1,34 @@
 ---
-title: Set up Next JS with firebase authentication
+title: Set up Next.js with firebase authentication
 date: '2021-07-27'
-excerpt: 'A simple straight to the point guide to setting up firebase authentication for Next.js.' 
+excerpt: 'A simple straight to the point guide to setting up firebase authentication for Next.js.'
 ---
 
 ## Set up Firebase
 
-Go to [firebase.google.com](https://firebase.google.com) and create a new Firebase database. 
+Go to [firebase.google.com](https://firebase.google.com) and create a new Firebase database.
 
 Go to Authentication in the navigation menu and choose Get Started.
 
 We'll start with Google's sign-in provider, as it's the simplest. GitHub also make the experience pretty easy. Facebook and Twitter have a few extra requirements, like having a privacy policy and T&Cs, but if you want to start here you can simply put in a fake URL to get past that requirement.
 
-As we're going with Google, choose Google from the list and enable it. Choose a Project public facing name, this will appear on the popup, so make it user friendly. Also choose a support email and hit save. 
+As we're going with Google, choose Google from the list and enable it. Choose a Project public facing name, this will appear on the popup, so make it user friendly. Also choose a support email and hit save.
 
 We also need to make sure we have allowed certain domains to have access, in development that's usually Localhost, which should already be in the authorised domains, if you already have a domain picked out for your app, add that to the authorised domains so you don't forget. I can't tell you the number of times I've launched something and it's broken when live and the amount of time it takes to remember this is the issue.
 
-Now that's sorted, click the settings cog in the Firebase menu, and create a new Web App. Name the app and take note of the apiKey, authDomain and projectId. That's all we need for authentication. At the moment, at least. 
+Now that's sorted, click the settings cog in the Firebase menu, and create a new Web App. Name the app and take note of the apiKey, authDomain and projectId. That's all we need for authentication. At the moment, at least.
 
 ## Save credentials
 
-For safety, we'll put this into our *.env.local* files. These need to be on the client side, as we'll be making the calls by the client. So they have to be named with *NEXT_PUBLIC* at the beginning. I named mine: *NEXT_PUBLIC_FIREBASE_API_KEY, NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN, NEXT_PUBLIC_FIREBASE_PROJECT_ID*.
+For safety, we'll put this into our _.env.local_ files. These need to be on the client side, as we'll be making the calls by the client. So they have to be named with _NEXT_PUBLIC_ at the beginning. I named mine: _NEXT_PUBLIC_FIREBASE_API_KEY, NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN, NEXT_PUBLIC_FIREBASE_PROJECT_ID_.
 
-Save your *.env.local* file and restart your dev environment. 
+Save your _.env.local_ file and restart your dev environment.
 
-We'll need to *npm install firebase* to get the functions within our Next JS app. 
+We'll need to _npm install firebase_ to get the functions within our Next JS app.
 
 ## Initialising Firebase
 
-Back in our apps codebase, we need to initialise Firebase. We'll do this by creating a *firebase.js* file. I like to put this in a lib folder. So */lib/firebase.js*. 
+Back in our apps codebase, we need to initialise Firebase. We'll do this by creating a _firebase.js_ file. I like to put this in a lib folder. So _/lib/firebase.js_.
 
 In here we need to initialise the app by using the following code. This essentially calls to Firebase with our secret credentials and creates a firebase function, which we'll export as our default:
 
@@ -42,7 +42,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID
+    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   });
 }
 
@@ -51,7 +51,6 @@ export function firestore() {
   return firebase.firestore();
 }
 
-
 export default firebase;
 ```
 
@@ -59,11 +58,11 @@ We can now call this from anywhere within our app.
 
 ## Authorisation
 
-Now to create an Authorisation context, we can create an *auth.js* within our utils folder, so */utils/auth.js* we'll come back to this file in a moment.
+Now to create an Authorisation context, we can create an _auth.js_ within our utils folder, so _/utils/auth.js_ we'll come back to this file in a moment.
 
-When we come to saving user related data into a database, and should we choose firestore to be that database, we'll also need to create a new database file for all our database functions. I call mine *db.js*. If you're only using Firebase auth, you can ignore all these database calls.
+When we come to saving user related data into a database, and should we choose firestore to be that database, we'll also need to create a new database file for all our database functions. I call mine _db.js_. If you're only using Firebase auth, you can ignore all these database calls.
 
-*db.js*
+_db.js_
 
 ```jsx
 import firebase from '@/lib/firebase';
@@ -78,11 +77,11 @@ export function createUser(uid, data) {
 }
 ```
 
-Back to our *auth.js* file. Here is the code I'll use, and I'll go through what its doing below:
+Back to our _auth.js_ file. Here is the code I'll use, and I'll go through what its doing below:
 
 ```jsx
 import React, { useState, useEffect, useContext, createContext } from 'react';
-import firebase from '@/lib/firebase'
+import firebase from '@/lib/firebase';
 
 const authContext = createContext();
 
@@ -126,7 +125,6 @@ function useProvideAuth() {
       });
   };
 
-
   const signout = () => {
     Router.push('/'); // remove to keep user on page
     return firebase
@@ -149,7 +147,7 @@ function useProvideAuth() {
     signinWithGitHub,
     signinWithGoogle,
     signinWithEmail,
-    signout
+    signout,
   };
 }
 
@@ -163,26 +161,26 @@ const formatUser = async (user) => {
     photoUrl: user.photoURL,
   };
 };
-
 ```
 
-We need to create a context provider for our Auth so we can wrap the entire app with it. We'll also create signin and sign out function which we can use to allow users to initiate the sign in. I also like to add a cookie here, so that we can be ready to protect any api calls or routes and for our app to remember the user is logged in more easily. I use js-cookie - so *npm install js-cookie* if you want a cookie.
+We need to create a context provider for our Auth so we can wrap the entire app with it. We'll also create signin and sign out function which we can use to allow users to initiate the sign in. I also like to add a cookie here, so that we can be ready to protect any api calls or routes and for our app to remember the user is logged in more easily. I use js-cookie - so _npm install js-cookie_ if you want a cookie.
 
-When the user initiates the sign in function our app will then take the user's returned details in raw format from Google Firebase and then call the *formatUser* to get what we want. If using Firestore as a database, call the createUser function we created in *db.js* from there with the the new formatted user details. However, we don't want to send all these details, so we need to destructure the user as we don't want to save the token to the database, we can do this by pulling out the token as its own constant variable, and spreading the rest of the values under *const {token, ...userWithoutToken} = user*. We can then create the user in the database with *user.id* as the firestore document id and then add the user details as the data. 
+When the user initiates the sign in function our app will then take the user's returned details in raw format from Google Firebase and then call the _formatUser_ to get what we want. If using Firestore as a database, call the createUser function we created in _db.js_ from there with the the new formatted user details. However, we don't want to send all these details, so we need to destructure the user as we don't want to save the token to the database, we can do this by pulling out the token as its own constant variable, and spreading the rest of the values under _const {token, ...userWithoutToken} = user_. We can then create the user in the database with _user.id_ as the firestore document id and then add the user details as the data.
 
-Next we are creating a cookie so we can identify a user on their computer, and set an expiry. This is in days. Skip this if you don't need or want a cookie. 
+Next we are creating a cookie so we can identify a user on their computer, and set an expiry. This is in days. Skip this if you don't need or want a cookie.
 
-We can then set the user state across the app. Meaning we can check if the user is signed in to show different parts of the app. For example, showing either 'login' or 'my account' from the navigation. We need to remove any loading states as we're done with the sign in at this point. This if/else statement also handles sign out, so if there is no *rawUser* being passed into the function, it will remove the cookie, set the user's state to false.
+We can then set the user state across the app. Meaning we can check if the user is signed in to show different parts of the app. For example, showing either 'login' or 'my account' from the navigation. We need to remove any loading states as we're done with the sign in at this point. This if/else statement also handles sign out, so if there is no _rawUser_ being passed into the function, it will remove the cookie, set the user's state to false.
 
-Next up we need to actually create a function that calls all this handleUser function, so for this case the Google sign in function. 
+Next up we need to actually create a function that calls all this handleUser function, so for this case the Google sign in function.
 
-We start by setting *loading* to true, so that we can use this variable to show the user that something is happening. Then we can return the firebase function *.auth()* using the *signInWithPopup()* function with firebase Google auth as the argument. Then we can take the response, which will be the users data, and we can call the handleUser function we created to pass the rawData to. After this we can push the user to the homepage, the account page, or remove the router and the page won't change.
+We start by setting _loading_ to true, so that we can use this variable to show the user that something is happening. Then we can return the firebase function _.auth()_ using the _signInWithPopup()_ function with firebase Google auth as the argument. Then we can take the response, which will be the users data, and we can call the handleUser function we created to pass the rawData to. After this we can push the user to the homepage, the account page, or remove the router and the page won't change.
 
-We will also create a sign out function within the *useProvideAuth()* function. 
+We will also create a sign out function within the _useProvideAuth()_ function.
 
-We can then return an object containing all these functions, and export *useAuth()* with React's (createContext()* hook to create the *authContext* const, and the *useContext()* hook to use that *authContext*. These functions will then all be accessible by calling *useAuth* function within pages. By creating the authContext provider we can pass in the useProviderAuth as the value. 
+We can then return an object containing all these functions, and export _useAuth()_ with React's (createContext()* hook to create the *authContext* const, and the *useContext()* hook to use that *authContext*. These functions will then all be accessible by calling *useAuth\* function within pages. By creating the authContext provider we can pass in the useProviderAuth as the value.
 
 > On a side note, I use @ for escaping the ../../.. patterns, to do this with Next.js you need to create a jsconfig.json document at the route of your folder, and add this code:
+>
 > ```jsx
 > {
 >   "compilerOptions": {
@@ -196,10 +194,10 @@ We can then return an object containing all these functions, and export *useAuth
 >   }
 > }
 > ```
-> It essentially writes the path to the folders with an @ symbol, so when you are importing something from a different file structure, you just need to say *import { function } from '@/utils/functions'* instead of *import { function } from '../../utils/functions'
+>
+> It essentially writes the path to the folders with an @ symbol, so when you are importing something from a different file structure, you just need to say _import { function } from '@/utils/functions'_ instead of \*import { function } from '../../utils/functions'
 
-
-Now we have the context let's go to *pages/_app.js* , and wrap our app with the newly created AuthProvider function. Looking something like this:
+Now we have the context let's go to _pages/\_app.js_ , and wrap our app with the newly created AuthProvider function. Looking something like this:
 
 ```jsx
 import '../styles/globals.css';
@@ -208,7 +206,7 @@ import { AuthProvider } from '@/utils/auth';
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </AuthProvider>
   );
 }
@@ -217,11 +215,10 @@ export default MyApp;
 ```
 
 Save, close that file as we won't need it again and go back to your auth.js file.
- 
-Now we need to add the function somewhere to use it. For this, I'm going to place the login and account into the Navigation bar. 
 
-To get access to these details, because we've used React's context hooks, we can call them by calling the *useAuth()* function from the *auth.js* file.
+Now we need to add the function somewhere to use it. For this, I'm going to place the login and account into the Navigation bar.
 
+To get access to these details, because we've used React's context hooks, we can call them by calling the _useAuth()_ function from the _auth.js_ file.
 
 ```jsx
 import { useAuth } from '@/utils/auth';
@@ -241,10 +238,6 @@ export default function Navbar() {
     </>
   );
 }
-
 ```
 
-And that's basically it. You can add other authentication methods or show different parts of the app by checking if the user is logged in. By using the cookie, you can protect certain API routes by using it in the headers so that it'll only pull a users data from firestore. 
-
-
-
+And that's basically it. You can add other authentication methods or show different parts of the app by checking if the user is logged in. By using the cookie, you can protect certain API routes by using it in the headers so that it'll only pull a users data from firestore.

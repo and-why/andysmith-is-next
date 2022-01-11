@@ -1,5 +1,5 @@
 ---
-title: Set up Next.js with MongoDB database, using GraphQL, Apollo Server PT.1
+title: Set up Next.js with MongoDB database, using GraphQL, Apollo Server
 date: '2021-08-24'
 excerpt: 'Straightforward set up guide for Next.js with MongoDb Apollo and GraphQL, using Mongoose as the ORM.'
 ---
