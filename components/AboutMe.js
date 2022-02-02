@@ -10,7 +10,7 @@ export default function AboutMe() {
       </H1>
       <Text fontSize='1.6em'>
         &#x2f;&#x2f; A freelance front-end engineer with a strong focus on design systems,
-        components and website performance. An Englishman, working remotely from the Ballerine
+        components and website performance. An Englishman, working remotely from the Bellarine
         Peninsula, Australia.
       </Text>
     </TextBlock>

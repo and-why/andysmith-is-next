@@ -10,6 +10,7 @@ import { H2 } from '../../components/styled-components/Headings';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { portfolio } from '../../data';
 import { LinkButton } from '../../components/styled-components/Buttons';
+import { externalTag } from '../../lib/icons';
 
 export const PortfolioItemStyle = styled.div`
   display: flex;
@@ -29,13 +30,13 @@ export const PortfolioItemStyle = styled.div`
 `;
 export const Gallery = styled.div`
   .scroll-container {
-    height: calc(300px + 100px);
+    height: 250px;
     display: flex;
-    direction: row;
+    flex-direction: row;
     cursor: grab;
     margin-bottom: 2em;
-    @media (max-width: 400px) {
-      height: calc(150px + 100px);
+    @media (min-width: 300px) {
+      height: 400px;
     }
   }
 `;
@@ -110,7 +111,12 @@ export default function SinglePortfolioItem({ data }) {
               stiffness: 1000,
             }}
           >
-            <ScrollContainer className='scroll-container' vertical='false' hideScrollbars='false'>
+            <ScrollContainer
+              className='scroll-container'
+              vertical='false'
+              hideScrollbars='false'
+              horizontal
+            >
               {item.images.map((image, i) => (
                 <ImageWrap key={i} brandColor={`${item.brandColor}85`}>
                   <Image
@@ -120,7 +126,7 @@ export default function SinglePortfolioItem({ data }) {
                     width={689}
                     objectFit='contain'
                     placeholder='blur'
-                    blurDataURL='/images/placeholder.png'
+                    blurDataURL='/images/placeholder.jpeg'
                     quality='100'
                   />
                 </ImageWrap>
@@ -129,28 +135,14 @@ export default function SinglePortfolioItem({ data }) {
           </motion.div>
         </Gallery>
         <TextBlock marginBottom='2em'>
-          <H2>Brief</H2>
+          <H2>About the project</H2>
           {item.brief.map((p, index) => (
             <Text key={index}>{p}</Text>
           ))}
         </TextBlock>
         <LinkButton href={item.website} target='_blank'>
-          Visit
-          <svg width='15px' height='15px' viewBox='0 0 24 24'>
-            <g
-              id='external_link'
-              className='icon_svg-stroke'
-              stroke='#000'
-              strokeWidth='1.5'
-              fill='none'
-              fillRule='evenodd'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-            >
-              <polyline points='17 13.5 17 19.5 5 19.5 5 7.5 11 7.5'></polyline>
-              <path d='M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5'></path>
-            </g>
-          </svg>
+          Visit {item.name}'s website
+          {externalTag}
         </LinkButton>
       </motion.div>
     </Layout>
