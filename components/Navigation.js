@@ -53,7 +53,12 @@ export default function Navigation() {
           return (
             <li key={i}>
               <Link href={link.href}>
-                <a aria-current={router.asPath === link.href}>
+                <a
+                  aria-current={router.asPath === link.href}
+                  referrerpolicy={link.referrerpolicy}
+                  rel={link.rel}
+                  className={link.className}
+                >
                   {link.title}
                   {link.icon}
                 </a>
