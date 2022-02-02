@@ -3,7 +3,6 @@ import AboutMe from '../components/AboutMe';
 import ProjectList from '../components/ProjectList';
 import { H2, H3 } from '../components/styled-components/Headings';
 import { Flex } from '../components/styled-components/Flex';
-import { ClientBox } from '../components/styled-components/ClientBox';
 import Link from 'next/link';
 import { externalTag } from '../lib/icons';
 import { Text } from '../components/styled-components/Text';
