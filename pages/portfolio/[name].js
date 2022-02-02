@@ -141,7 +141,7 @@ export default function SinglePortfolioItem({ data }) {
           ))}
         </TextBlock>
         <LinkButton href={item.website} target='_blank'>
-          Visit {item.name}'s website
+          Visit {item.name}&apos;s website
           {externalTag}
         </LinkButton>
       </motion.div>
