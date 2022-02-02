@@ -5,11 +5,11 @@ import { Flex } from './styled-components/Flex';
 import { TextBlock } from './styled-components/TextBlock';
 import { motion } from 'framer-motion';
 
-export default function PortfolioListItem({ data }) {
+export default function ProjectListItem({ data }) {
   const imageSrc = `/images/${data.image}.png`;
 
   return (
-    <Link href={`/portfolio/${data.name}`}>
+    <Link href={`/project/${data.name}`}>
       <a>
         <Flex>
           <motion.figure layoutId={data.image}>

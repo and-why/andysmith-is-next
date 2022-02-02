@@ -8,11 +8,11 @@ import { Flex } from '../../components/styled-components/Flex';
 import { TextBlock } from '../../components/styled-components/TextBlock';
 import { H2 } from '../../components/styled-components/Headings';
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { portfolio } from '../../data';
+import { projects } from '../../data';
 import { LinkButton } from '../../components/styled-components/Buttons';
 import { externalTag } from '../../lib/icons';
 
-export const PortfolioItemStyle = styled.div`
+export const ProjectItemStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +60,7 @@ export const ImageWrap = styled.div`
   }
 `;
 
-export default function SinglePortfolioItem({ data }) {
+export default function SingleProjectItem({ data }) {
   const router = useRouter();
   const item = data.filter((data) => data.name === router.query.name)[0];
 
@@ -69,7 +69,7 @@ export default function SinglePortfolioItem({ data }) {
       pageTitle={`${item.title} case study`}
       description={`Andy Smith portfio piece for ${item.title}. ${item.brief}`}
     >
-      <PortfolioItemStyle>
+      <ProjectItemStyle>
         <motion.figure layoutId={item.image}>
           <Image
             alt={item.title}
@@ -89,7 +89,7 @@ export default function SinglePortfolioItem({ data }) {
             <motion.p layoutId={item.technology}>Technology: {item.technology}</motion.p>
           </div>
         </Flex>
-      </PortfolioItemStyle>
+      </ProjectItemStyle>
 
       <motion.div
         className='full-width'
@@ -150,14 +150,13 @@ export default function SinglePortfolioItem({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const data = portfolio;
   return {
-    props: { data: data },
+    props: { data: projects },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = portfolio.map((p) => `/portfolio/${p.name}`);
+  const paths = projects.map((p) => `/project/${p.name}`);
   return {
     paths,
     fallback: 'blocking', // See the "fallback" section below

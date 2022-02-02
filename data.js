@@ -1,4 +1,4 @@
-export const portfolio = [
+export const projects = [
   {
     id: '0',
     name: 'eadee',

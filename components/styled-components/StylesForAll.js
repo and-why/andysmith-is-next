@@ -39,6 +39,18 @@ export default function stylesForAll(props) {
         margin-right: ${props.marginRight};
       `}
   ${(props) =>
+      props.mx &&
+      css`
+        margin-right: ${props.mx};
+        margin-left: ${props.mx};
+      `}
+  ${(props) =>
+      props.my &&
+      css`
+        margin-top: ${props.my};
+        margin-bottom: ${props.my};
+      `}
+  ${(props) =>
       props.padding &&
       css`
         padding: ${props.padding};

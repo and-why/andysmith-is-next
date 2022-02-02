@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   --primary: rgba(249, 115, 22, 0.95);
   --black: #10203d;
+  --gray: #e3e3e3;
 }
 *,
 *:before,
