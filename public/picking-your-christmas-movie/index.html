@@ -33,13 +33,19 @@
         top: 0;
         left: 0;
         width: 25%;
+
+        @media (min-width: 768px) {
+          width: 50%;
+        }
       }
       .holly {
         width: 100%;
+        z-index: 1;
       }
       h1 {
         font-size: 5rem;
         font-family: 'Dancing Script', cursive;
+        z-index: 100;
       }
       #moviePick {
         font-size: 8rem;
@@ -80,7 +86,7 @@
   </head>
   <body>
     <div class="holly-wrapper">
-      <img src="images/holly.png" alt="holly" class="holly" />
+      <img src="/images/holly.png" alt="holly" class="holly" />
     </div>
     <h1>Christmas Movie Picker</h1>
     <p><span id="moviePick"></span></p>
