@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Christmas Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Festive&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        background-color: #a21a1a;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+      }
+      .holly-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25%;
+      }
+      .holly {
+        width: 100%;
+      }
+      h1 {
+        font-size: 5rem;
+        font-family: 'Dancing Script', cursive;
+      }
+      #moviePick {
+        font-size: 8rem;
+        text-transform: capitalize;
+        font-family: 'Dancing Script', cursive;
+      }
+      .date {
+        font-size: 2rem;
+      }
+      button {
+        all: unset;
+        background-color: #2e6e1c;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background-color: #fff;
+        color: #2e6e1c;
+      }
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        font-size: 1.5rem;
+        user-select: none;
+        pointer-events: none;
+        animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(105vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="holly-wrapper">
+      <img src="images/holly.png" alt="holly" class="holly" />
+    </div>
+    <h1>Christmas Movie Picker</h1>
+    <p><span id="moviePick"></span></p>
+    <div>
+      <button id="pickMovie" onClick="pickRandomMovie()">Pick a movie</button>
+      <p class="date">December 25th</p>
+    </div>
+
+    <script>
+      const movies = [
+        'Last Christmas',
+        'Bad Santa',
+        'Home alone 1',
+        'Home alone 2',
+        'Klaus',
+        'Holiday',
+        'Love actually',
+        'Four Christmases',
+        'Red One',
+        'Ghosts of girlfriends past',
+        'Scrooge (Bill Murray)',
+        'That Christmas',
+        'Violent night',
+        'Elf',
+        'The Night before christmas',
+        'Spirited',
+        'Your christmas or mine',
+        'Love hard',
+        'ExMas',
+        'Nutcrackers',
+        "Something from Tiffany's",
+        'Genie',
+        'Our little secret',
+        'Hot Frosty',
+        'Holidate',
+        'Single all the way',
+        'Christmas inheritance',
+        'Office Christmas Party',
+        'El Camino christmas',
+        'Christmas of 34th street',
+        'Happiest christmas',
+      ];
+
+      function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.innerHTML = '❄';
+        snowflake.className = 'snowflake';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowflake.style.opacity = Math.random();
+        document.body.appendChild(snowflake);
+
+        snowflake.addEventListener('animationend', () => {
+          snowflake.remove();
+        });
+      }
+
+      function startSnowfall() {
+        const snowInterval = setInterval(() => {
+          createSnowflake();
+        }, 100);
+
+        setTimeout(() => {
+          clearInterval(snowInterval);
+        }, 5000);
+      }
+
+      function pickRandomMovie() {
+        todaysDate();
+        const duration = 3000;
+        const interval = 50;
+        let startTime = Date.now();
+
+        const animation = setInterval(() => {
+          const elapsed = Date.now() - startTime;
+          const randomIndex = Math.floor(Math.random() * movies.length);
+          document.getElementById('moviePick').textContent = movies[randomIndex];
+
+          if (elapsed >= duration) {
+            clearInterval(animation);
+            const finalIndex = Math.floor(Math.random() * movies.length);
+            document.getElementById('moviePick').textContent = movies[finalIndex];
+            startSnowfall();
+          }
+        }, interval);
+      }
+
+      function todaysDate() {
+        const today = new Date();
+        const day = today.getDate();
+        const month = today.toLocaleString('default', { month: 'long' });
+        const year = today.getFullYear();
+
+        // Add ordinal suffix (st, nd, rd, th)
+        const suffix = (day) => {
+          if (day > 3 && day < 21) return 'th';
+          switch (day % 10) {
+            case 1:
+              return 'st';
+            case 2:
+              return 'nd';
+            case 3:
+              return 'rd';
+            default:
+              return 'th';
+          }
+        };
+
+        document.querySelector('.date').textContent = `${day}${suffix(day)} ${month} ${year}`;
+      }
+      todaysDate();
+    </script>
+  </body>
+</html>
