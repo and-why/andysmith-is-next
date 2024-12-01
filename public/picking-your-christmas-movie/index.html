@@ -167,23 +167,31 @@
       function pickRandomMovie() {
         todaysDate();
         const duration = 3000;
-        const interval = 50;
+        const startInterval = 20;
         let startTime = Date.now();
 
-        const animation = setInterval(() => {
+        let animation;
+        const updateMovie = () => {
           const elapsed = Date.now() - startTime;
+          const progress = elapsed / duration;
+
+          const currentInterval = startInterval + Math.pow(progress, 4) * 1000;
+
           const randomIndex = Math.floor(Math.random() * movies.length);
           document.getElementById('moviePick').textContent = movies[randomIndex];
 
           if (elapsed >= duration) {
-            clearInterval(animation);
+            clearTimeout(animation);
             const finalIndex = Math.floor(Math.random() * movies.length);
             document.getElementById('moviePick').textContent = movies[finalIndex];
             startSnowfall();
+          } else {
+            animation = setTimeout(updateMovie, currentInterval);
           }
-        }, interval);
-      }
+        };
 
+        updateMovie();
+      }
       function todaysDate() {
         const today = new Date();
         const day = today.getDate();
